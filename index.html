@@ -439,6 +439,59 @@
     © Eyal Ezra 2026
   </footer>
 
+  <div id="lightbox" style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999;
+">
+
+<div id="lightbox-prev" style="
+position:absolute;
+left:30px;
+top:50%;
+transform:translateY(-50%);
+font-size:60px;
+color:white;
+cursor:pointer;
+user-select:none;
+">‹</div>
+
+<img id="lightbox-img" style="
+max-width:95%;
+max-height:95%;
+object-fit:contain;
+">
+
+<div id="lightbox-next" style="
+position:absolute;
+right:30px;
+top:50%;
+transform:translateY(-50%);
+font-size:60px;
+color:white;
+cursor:pointer;
+user-select:none;
+">›</div>
+
+<div id="lightbox-close" style="
+position:absolute;
+top:30px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+font-family:sans-serif;
+">×</div>
+
+</div>
+  
   <script>
     const heroImages = [
       "https://drive.google.com/thumbnail?id=1hF8H9V4YFJirXso8m4UTLt4bhxCowWsA&sz=w2000",
@@ -605,57 +658,5 @@ document.getElementById("lightbox-next").onclick = nextImage;
 document.getElementById("lightbox-prev").onclick = prevImage;
     
   </script>
-<div id="lightbox" style="
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:black;
-display:none;
-align-items:center;
-justify-content:center;
-z-index:9999;
-">
-
-<div id="lightbox-prev" style="
-position:absolute;
-left:30px;
-top:50%;
-transform:translateY(-50%);
-font-size:60px;
-color:white;
-cursor:pointer;
-user-select:none;
-">‹</div>
-
-<img id="lightbox-img" style="
-max-width:95%;
-max-height:95%;
-object-fit:contain;
-">
-
-<div id="lightbox-next" style="
-position:absolute;
-right:30px;
-top:50%;
-transform:translateY(-50%);
-font-size:60px;
-color:white;
-cursor:pointer;
-user-select:none;
-">›</div>
-
-<div id="lightbox-close" style="
-position:absolute;
-top:30px;
-right:40px;
-font-size:40px;
-color:white;
-cursor:pointer;
-font-family:sans-serif;
-">×</div>
-
-</div>
 </body>
 </html>
