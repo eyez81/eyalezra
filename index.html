@@ -482,7 +482,14 @@
   hideAllSections();
   document.getElementById(albumId).classList.add("active");
 }
-  
+
+    // חסימת קליק ימני על תמונות
+document.querySelectorAll("img").forEach(img => {
+  img.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+  });
+});
+    
   </script>
 </body>
 </html>
