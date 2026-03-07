@@ -672,6 +672,34 @@ document.getElementById("lightbox-close").onclick = function(e){
 document.getElementById("lightbox-img").onclick = function(e){
   e.stopPropagation();
 };
+
+    // טעינה חכמה של תמונות
+const lazyImages = document.querySelectorAll("img[loading='lazy']");
+
+const imageObserver = new IntersectionObserver((entries, observer) => {
+
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting){
+
+      const img = entry.target;
+      const src = img.getAttribute("src");
+
+      img.src = src;
+
+      observer.unobserve(img);
+
+    }
+
+  });
+
+}, {
+  rootMargin: "200px"
+});
+
+lazyImages.forEach(img => {
+  imageObserver.observe(img);
+});
     
   </script>
 </body>
