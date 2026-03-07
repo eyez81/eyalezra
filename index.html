@@ -491,13 +491,171 @@
   document.getElementById(albumId).classList.add("active");
 }
 
-    // חסימת קליק ימני על תמונות
+ // חסימת קליק ימני על תמונות
 document.querySelectorAll("img").forEach(img => {
   img.addEventListener("contextmenu", function(e) {
     e.preventDefault();
   });
 });
+
+let currentAlbumImages = [];
+let currentIndex = 0;
+
+document.querySelectorAll(".album-gallery img").forEach(img => {
+
+  img.addEventListener("click", function(){
+
+    const gallery = img.closest(".album-gallery");
+    currentAlbumImages = Array.from(gallery.querySelectorAll("img"));
+
+    currentIndex = currentAlbumImages.indexOf(img);
+
+    openLightbox(currentAlbumImages[currentIndex].src);
+
+  });
+
+});
+
+function openLightbox(src){
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  lightbox.style.display = "flex";
+  lightboxImg.src = src;
+
+}
+
+function closeLightbox(){
+  document.getElementById("lightbox").style.display = "none";
+}
+
+document.getElementById("lightbox-close").onclick = closeLightbox;
+
+// סגירה בלחיצה על הרקע
+document.getElementById("lightbox").onclick = function(e){
+  if(e.target.id === "lightbox"){
+    closeLightbox();
+  }
+};
+
+// חצים במקלדת
+document.addEventListener("keydown", function(e){
+
+  if(document.getElementById("lightbox").style.display !== "flex") return;
+
+  if(e.key === "ArrowRight"){
+    nextImage();
+  }
+
+  if(e.key === "ArrowLeft"){
+    prevImage();
+  }
+
+  if(e.key === "Escape"){
+    closeLightbox();
+  }
+
+});
+
+function nextImage(){
+
+  currentIndex = (currentIndex + 1) % currentAlbumImages.length;
+  document.getElementById("lightbox-img").src = currentAlbumImages[currentIndex].src;
+
+}
+
+function prevImage(){
+
+  currentIndex = (currentIndex - 1 + currentAlbumImages.length) % currentAlbumImages.length;
+  document.getElementById("lightbox-img").src = currentAlbumImages[currentIndex].src;
+
+}
+
+// Swipe במסך מגע
+let touchStartX = 0;
+let touchEndX = 0;
+
+const lightboxElement = document.getElementById("lightbox");
+
+lightboxElement.addEventListener("touchstart", function(e){
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+lightboxElement.addEventListener("touchend", function(e){
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe(){
+
+  if(Math.abs(touchEndX - touchStartX) < 50) return;
+
+  if(touchEndX < touchStartX){
+    nextImage();
+  }
+
+  if(touchEndX > touchStartX){
+    prevImage();
+  }
+
+}
+
+document.getElementById("lightbox-next").onclick = nextImage;
+document.getElementById("lightbox-prev").onclick = prevImage;
     
   </script>
+<div id="lightbox" style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999;
+">
+
+<div id="lightbox-prev" style="
+position:absolute;
+left:30px;
+top:50%;
+transform:translateY(-50%);
+font-size:60px;
+color:white;
+cursor:pointer;
+user-select:none;
+">‹</div>
+
+<img id="lightbox-img" style="
+max-width:95%;
+max-height:95%;
+object-fit:contain;
+">
+
+<div id="lightbox-next" style="
+position:absolute;
+right:30px;
+top:50%;
+transform:translateY(-50%);
+font-size:60px;
+color:white;
+cursor:pointer;
+user-select:none;
+">›</div>
+
+<div id="lightbox-close" style="
+position:absolute;
+top:30px;
+right:40px;
+font-size:40px;
+color:white;
+cursor:pointer;
+font-family:sans-serif;
+">×</div>
+
+</div>
 </body>
 </html>
