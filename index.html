@@ -212,6 +212,10 @@
 }
 
 .hamburger {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 30px;
   line-height: 1;
   cursor: pointer;
@@ -235,13 +239,13 @@
     display: none !important;
   }
 
-  .mobile-header {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 28px;
-    padding: 34px 24px 10px;
-  }
+ .mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 34px 24px 10px;
+}
 
   .mobile-menu {
     display: none;
@@ -255,9 +259,9 @@
   }
 
   .hero-square {
-    width: 92vw;
-    margin-top: 30px;
-  }
+  width: 92vw;
+  margin-top: 55px;
+}
 
   footer {
     margin-top: 70px;
