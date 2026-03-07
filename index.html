@@ -654,8 +654,24 @@ function handleSwipe(){
 
 }
 
-document.getElementById("lightbox-next").onclick = nextImage;
-document.getElementById("lightbox-prev").onclick = prevImage;
+document.getElementById("lightbox-next").onclick = function(e){
+  e.stopPropagation();
+  nextImage();
+};
+
+document.getElementById("lightbox-prev").onclick = function(e){
+  e.stopPropagation();
+  prevImage();
+};
+
+document.getElementById("lightbox-close").onclick = function(e){
+  e.stopPropagation();
+  closeLightbox();
+};
+
+document.getElementById("lightbox-img").onclick = function(e){
+  e.stopPropagation();
+};
     
   </script>
 </body>
