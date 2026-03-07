@@ -441,10 +441,12 @@
       document.getElementById("home").classList.add("active");
     }
 
-    function showAlbum(albumId) {
-      hideAllSections();
-      document.getElementById(albumId).classList.add("active");
-    }
+   function showAlbum(albumId) {
+  hideAllSubmenus();
+  hideAllSections();
+  document.getElementById(albumId).classList.add("active");
+}
+  
   </script>
 </body>
 </html>
