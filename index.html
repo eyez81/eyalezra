@@ -298,10 +298,11 @@
 
 .album-gallery {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 50px;              /* רווח בין התמונות */
-  padding-left: 200px;    /* רווח גדול בצד שמאל */
-  padding-right: 200px;   /* רווח גדול בצד ימין */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 54px;
+  padding-left: 200px;
+  padding-right: 200px;
+  grid-auto-flow: dense;
 }
 
 .album-gallery img {
@@ -310,7 +311,17 @@
   display: block;
 }
 
-/* התאמה למובייל */
+/* תמונה אופקית */
+.album-gallery img.landscape {
+  grid-column: span 2;
+}
+
+/* תמונה ריבועית */
+.album-gallery img.square {
+  grid-column: span 2;
+}
+
+/* מובייל */
 
 @media (max-width: 768px) {
 
@@ -928,6 +939,32 @@ document.getElementById("lightbox-img").onclick = function(e){
   e.stopPropagation();
 };
     
-  </script>
+<script>
+
+document.querySelectorAll(".album-gallery img").forEach(img => {
+
+  function classify() {
+
+    const w = img.naturalWidth;
+    const h = img.naturalHeight;
+
+    if (w > h) {
+      img.classList.add("landscape");
+    } 
+    else if (Math.abs(w - h) < 80) {
+      img.classList.add("square");
+    }
+
+  }
+
+  if (img.complete) {
+    classify();
+  } else {
+    img.onload = classify;
+  }
+
+});
+
+</script>
 </body>
 </html>
