@@ -289,48 +289,46 @@
 }
 
 .album-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 12px;
-  row-gap: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
   padding-left: clamp(40px, 12vw, 200px);
   padding-right: clamp(40px, 12vw, 200px);
 }
 
-.album-gallery img {
+.album-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 12px;
+  align-items: start;
+}
+
+.album-row.single {
+  grid-template-columns: 1fr;
+}
+
+.album-row img {
   width: 100%;
   height: auto;
   display: block;
-}
-
-/* תמונה אופקית */
-.album-gallery img.landscape {
-  grid-column: span 2;
-}
-
-/* תמונה ריבועית */
-.album-gallery img.square {
-  grid-column: span 2;
-}
-
-/* תמונה אנכית שנשארה בלי זוג */
-.album-gallery img.single-portrait {
-  grid-column: span 2;
+  background: #f2f2f2;
 }
 
 @media (max-width: 768px) {
   .album-gallery {
     padding-left: 50px;
     padding-right: 50px;
+    gap: 32px;
+  }
+
+  .album-row {
     column-gap: 10px;
-    row-gap: 32px;
   }
 }
     
-    .album-text {
-  grid-column: span 2;
+.album-text {
   max-width: 700px;
-  margin: 10px auto 10px auto;
+  margin: 0 auto;
   font-size: 16px;
   line-height: 1.9;
   color: #555;
@@ -1352,65 +1350,98 @@ document.getElementById("lightbox-img").onclick = function(e){
 };
 
 
-// זיהוי תמונות אנכיות / אופקיות לפי רצף אמיתי בגלריה
+// בניית גלריה לפי שורות אמיתיות בלי חורים
 
-function classifyGalleryImages() {
+function createSingleRow(item) {
+  const row = document.createElement("div");
+  row.className = "album-row single";
+  row.appendChild(item);
+  return row;
+}
+
+function createPairRow(item1, item2) {
+  const row = document.createElement("div");
+  row.className = "album-row";
+  row.appendChild(item1);
+  row.appendChild(item2);
+  return row;
+}
+
+function buildAlbumRows() {
   document.querySelectorAll(".album-gallery").forEach(gallery => {
-    const children = Array.from(gallery.children);
+    const items = Array.from(gallery.children);
+    const fragment = document.createDocumentFragment();
 
-    // ניקוי מחלקות קודמות
-    gallery.querySelectorAll("img").forEach(img => {
-      img.classList.remove("landscape", "square", "single-portrait");
-    });
+    let portraitBuffer = [];
 
-    let portraitRun = [];
-
-    function flushPortraitRun() {
-      if (portraitRun.length % 2 !== 0) {
-        portraitRun[portraitRun.length - 1].classList.add("single-portrait");
+    function flushPortraitBuffer() {
+      if (portraitBuffer.length === 1) {
+        fragment.appendChild(createSingleRow(portraitBuffer[0]));
+      } else if (portraitBuffer.length > 1) {
+        for (let i = 0; i < portraitBuffer.length; i += 2) {
+          if (portraitBuffer[i + 1]) {
+            fragment.appendChild(createPairRow(portraitBuffer[i], portraitBuffer[i + 1]));
+          } else {
+            fragment.appendChild(createSingleRow(portraitBuffer[i]));
+          }
+        }
       }
-      portraitRun = [];
+      portraitBuffer = [];
     }
 
-    children.forEach(el => {
-      if (el.tagName !== "IMG") {
-        flushPortraitRun();
+    items.forEach(item => {
+      if (item.classList.contains("album-text")) {
+        flushPortraitBuffer();
+        fragment.appendChild(item);
         return;
       }
 
-      const w = el.naturalWidth;
-      const h = el.naturalHeight;
+      if (item.tagName !== "IMG") {
+        flushPortraitBuffer();
+        fragment.appendChild(item);
+        return;
+      }
 
-      if (!w || !h) return;
+      const w = item.naturalWidth;
+      const h = item.naturalHeight;
 
-      if (w > h) {
-        el.classList.add("landscape");
-        flushPortraitRun();
-      } else if (Math.abs(w - h) < 80) {
-        el.classList.add("square");
-        flushPortraitRun();
+      if (!w || !h) {
+        flushPortraitBuffer();
+        fragment.appendChild(createSingleRow(item));
+        return;
+      }
+
+      const isLandscape = w > h;
+      const isSquare = Math.abs(w - h) < 80;
+
+      if (isLandscape || isSquare) {
+        flushPortraitBuffer();
+        fragment.appendChild(createSingleRow(item));
       } else {
-        portraitRun.push(el);
+        portraitBuffer.push(item);
       }
     });
 
-    flushPortraitRun();
+    flushPortraitBuffer();
+
+    gallery.innerHTML = "";
+    gallery.appendChild(fragment);
   });
 }
 
-function waitForImagesThenClassify() {
+function waitForImagesThenBuildRows() {
   const images = Array.from(document.querySelectorAll(".album-gallery img"));
   let loaded = 0;
 
   if (images.length === 0) {
-    classifyGalleryImages();
+    buildAlbumRows();
     return;
   }
 
   function done() {
     loaded++;
     if (loaded === images.length) {
-      classifyGalleryImages();
+      buildAlbumRows();
     }
   }
 
@@ -1424,8 +1455,8 @@ function waitForImagesThenClassify() {
   });
 }
 
-waitForImagesThenClassify();
-window.addEventListener("load", classifyGalleryImages);
+waitForImagesThenBuildRows();
+window.addEventListener("load", buildAlbumRows);
 </script>
 </body>
 </html>
