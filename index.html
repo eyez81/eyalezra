@@ -120,14 +120,6 @@
       font-weight: 400;
     }
 
-    .album-gallery {
-      max-width: 720px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
     .album-gallery img {
       width: 100%;
       display: block;
@@ -300,8 +292,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 54px;
-  padding-left: 200px;
-  padding-right: 200px;
+ padding-left: clamp(40px, 12vw, 200px);
+padding-right: clamp(40px, 12vw, 200px);
   grid-auto-flow: dense;
 }
 
@@ -935,11 +927,13 @@ document.getElementById("lightbox-close").onclick = function(e){
   closeLightbox();
 };
 
+
 document.getElementById("lightbox-img").onclick = function(e){
   e.stopPropagation();
 };
-    
-<script>
+
+
+// זיהוי תמונות אנכיות / אופקיות
 
 document.querySelectorAll(".album-gallery img").forEach(img => {
 
