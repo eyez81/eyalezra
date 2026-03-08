@@ -299,7 +299,9 @@
 .album-gallery {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 28px; /* רווח בין התמונות */
+  gap: 50px;              /* רווח בין התמונות */
+  padding-left: 160px;    /* רווח גדול בצד שמאל */
+  padding-right: 160px;   /* רווח גדול בצד ימין */
 }
 
 .album-gallery img {
@@ -308,14 +310,14 @@
   display: block;
 }
 
-/* מובייל */
+/* התאמה למובייל */
 
 @media (max-width: 768px) {
 
   .album-gallery {
-padding-left: 42px;
-padding-right: 42px;
-gap: 32px;
+    padding-left: 50px;
+    padding-right: 50px;
+    gap: 40px;
   }
 
 }
