@@ -296,8 +296,28 @@
   contain-intrinsic-size: 1200px;
 }
 
+.album-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
 .album-gallery img {
+  width: 100%;
   height: auto;
+  display: block;
+}
+
+/* רווחים במובייל */
+
+@media (max-width: 768px) {
+
+  .album-gallery {
+    padding-left: 18px;
+    padding-right: 18px;
+    gap: 16px;
+  }
+
 }
     
 </style>
