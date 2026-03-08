@@ -295,7 +295,6 @@
   row-gap: 40px;
   padding-left: clamp(40px, 12vw, 200px);
   padding-right: clamp(40px, 12vw, 200px);
-  grid-auto-flow: dense;
 }
 
 .album-gallery img {
@@ -314,20 +313,19 @@
   grid-column: span 2;
 }
 
+/* תמונה אנכית שנשארה בלי זוג */
 .album-gallery img.single-portrait {
   grid-column: span 2;
 }
-    
-/* מובייל */
 
 @media (max-width: 768px) {
-
   .album-gallery {
     padding-left: 50px;
     padding-right: 50px;
     column-gap: 10px;
     row-gap: 32px;
   }
+}
 
 }
 
@@ -1358,73 +1356,65 @@ document.getElementById("lightbox-img").onclick = function(e){
 
 // זיהוי תמונות אנכיות / אופקיות
 
-function classifyAllImages() {
+function classifyGalleryImages() {
   document.querySelectorAll(".album-gallery").forEach(gallery => {
     const images = Array.from(gallery.querySelectorAll("img"));
 
-    // קודם מנקים מחלקות קודמות
     images.forEach(img => {
       img.classList.remove("landscape", "square", "single-portrait");
     });
 
-    // קודם מסווגים לפי יחס
+    const portraitBuffer = [];
+
     images.forEach(img => {
       const w = img.naturalWidth;
       const h = img.naturalHeight;
+
+      if (!w || !h) return;
 
       if (w > h) {
         img.classList.add("landscape");
       } else if (Math.abs(w - h) < 80) {
         img.classList.add("square");
-      }
-    });
-
-    // עכשיו בודקים אנכיות שנשארו בלי זוג
-    let portraitBuffer = [];
-
-    images.forEach(img => {
-      const isLandscape = img.classList.contains("landscape");
-      const isSquare = img.classList.contains("square");
-
-      if (!isLandscape && !isSquare) {
-        portraitBuffer.push(img);
-
-        if (portraitBuffer.length === 2) {
-          portraitBuffer = [];
-        }
       } else {
-        if (portraitBuffer.length === 1) {
-          portraitBuffer[0].classList.add("single-portrait");
-        }
-        portraitBuffer = [];
+        portraitBuffer.push(img);
       }
     });
 
-    // אם בסוף נשארה אנכית אחת לבד
-    if (portraitBuffer.length === 1) {
-      portraitBuffer[0].classList.add("single-portrait");
+    if (portraitBuffer.length % 2 !== 0) {
+      portraitBuffer[portraitBuffer.length - 1].classList.add("single-portrait");
     }
   });
 }
 
-const allGalleryImages = document.querySelectorAll(".album-gallery img");
-let loadedCount = 0;
+function waitForImagesThenClassify() {
+  const images = Array.from(document.querySelectorAll(".album-gallery img"));
+  let loaded = 0;
 
-allGalleryImages.forEach(img => {
-  function onReady() {
-    loadedCount++;
-    if (loadedCount >= allGalleryImages.length) {
-      classifyAllImages();
+  if (images.length === 0) {
+    classifyGalleryImages();
+    return;
+  }
+
+  function done() {
+    loaded++;
+    if (loaded === images.length) {
+      classifyGalleryImages();
     }
   }
 
-  if (img.complete) {
-    onReady();
-  } else {
-    img.onload = onReady;
-    img.onerror = onReady;
-  }
-});
+  images.forEach(img => {
+    if (img.complete && img.naturalWidth > 0) {
+      done();
+    } else {
+      img.addEventListener("load", done, { once: true });
+      img.addEventListener("error", done, { once: true });
+    }
+  });
+}
+
+waitForImagesThenClassify();
+window.addEventListener("load", classifyGalleryImages);
 
 </script>
 </body>
