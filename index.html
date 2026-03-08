@@ -20,321 +20,321 @@
 <meta name="twitter:description" content="Photography projects, portraits and travel stories by Eyal Ezra">
 <meta name="twitter:image" content="https://drive.google.com/thumbnail?id=1hF8H9V4YFJirXso8m4UTLt4bhxCowWsA&sz=w2000">
   
-  <style>
-    body {
-      margin: 0;
-      background: #ffffff;
-      color: #222;
-      font-family: Georgia, "Times New Roman", serif;
-      text-align: center;
-    }
-
-   .site-title {
-  display: inline-block;
-  margin-top: 36px;
-  margin-bottom: 24px;
-  font-family: "Bodoni Moda", serif;
-  font-size: 58px;
-  font-weight: 500;
-  letter-spacing: 4px;
-  color: #222;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-    .main-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 18px;
-  flex-wrap: nowrap;
-  white-space: nowrap;
-  margin-bottom: 24px;
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-    .main-nav a {
-      text-decoration: none;
-      color: #222;
-      cursor: pointer;
-    }
-
-    .submenu {
-      display: none;
-      margin-bottom: 32px;
-    }
-
-    .submenu.active {
-      display: block;
-    }
-
-    .submenu a {
-      display: block;
-      text-decoration: none;
-      color: #444;
-      font-size: 13px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin: 8px 0;
-      cursor: pointer;
-    }
-
-    .content {
-      max-width: 1100px;
-      margin: 0 auto 60px;
-      padding: 0 20px;
-    }
-
-    .home-section,
-    .album-section {
-      display: none;
-    }
-
-    .home-section.active,
-    .album-section.active {
-      display: block;
-    }
-
-    .hero-square {
-      width: min(82vw, 760px);
-      aspect-ratio: 1 / 1;
-      margin: 80px auto 0;
-      overflow: hidden;
-      background: #f2f2f2;
-    }
-
-    .hero-square img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .album-title {
-      margin: 20px 0 30px;
-      font-size: 18px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-weight: 400;
-    }
-
-    .album-gallery img {
-      width: 100%;
-      display: block;
-      object-fit: cover;
-      background: #f2f2f2;
-    }
-
-    footer {
-      margin-top: 80px;
-      margin-bottom: 30px;
-      font-size: 12px;
-      color: #777;
-      letter-spacing: 1px;
-    }
-
- @media (max-width: 768px) {
+ <style>
+  body {
+    margin: 0;
+    background: #ffffff;
+    color: #222;
+    font-family: Georgia, "Times New Roman", serif;
+    text-align: center;
+  }
 
   .site-title {
-    font-size: 34px;
+    display: inline-block;
+    margin-top: 36px;
+    margin-bottom: 24px;
+    font-family: "Bodoni Moda", serif;
+    font-size: 58px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: #222;
+    text-decoration: none;
+    cursor: pointer;
   }
 
   .main-nav {
-    gap: 8px;
-    font-size: 11px;
-    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    margin-bottom: 24px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 
   .main-nav a {
-    padding: 0 4px;
+    text-decoration: none;
+    color: #222;
+    cursor: pointer;
+  }
+
+  .submenu {
+    display: none;
+    margin-bottom: 32px;
+  }
+
+  .submenu.active {
+    display: block;
+  }
+
+  .submenu a {
+    display: block;
+    text-decoration: none;
+    color: #444;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 8px 0;
+    cursor: pointer;
+  }
+
+  .content {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+  }
+
+  .home-section,
+  .album-section {
+    display: none;
+  }
+
+  .home-section.active,
+  .album-section.active {
+    display: block;
   }
 
   .hero-square {
-    width: 92vw;
-    margin-top: 50px;
+    width: min(82vw, 760px);
+    aspect-ratio: 1 / 1;
+    margin: 80px auto 0;
+    overflow: hidden;
+    background: #f2f2f2;
   }
 
-}
-
-    .mobile-header {
-  display: none;
-}
-
-.mobile-menu {
-  display: none;
-}
-
-.mobile-menu.active {
-  display: block;
-}
-
-.mobile-menu-section {
-  border-bottom: 1px solid #ddd;
-  padding: 18px 0;
-  text-align: left;
-}
-
-.mobile-menu-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  color: #666;
-}
-
-.mobile-submenu {
-  display: none;
-  margin-top: 14px;
-  padding-left: 18px;
-}
-
-.mobile-submenu.active {
-  display: block;
-}
-
-.mobile-submenu a {
-  display: block;
-  text-decoration: none;
-  color: #777;
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin: 12px 0;
-  cursor: pointer;
-}
-
-.hamburger {
-  position: absolute;
-  left: 24px;
-  top: 58%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  line-height: 1;
-  font-weight: 400;
-  cursor: pointer;
-  user-select: none;
-  color: #777;
-}
-
-.mobile-header-title {
-  font-family: "Bodoni Moda", serif;
-  font-size: 30px;
-  font-weight: 500;
-  letter-spacing: 4px;
-  color: #222;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-
-  .site-title,
-  .main-nav,
-  .submenu {
-    display: none !important;
+  .hero-square img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
- .mobile-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 34px 24px 10px;
-}
+  .album-title {
+    margin: 20px 0 30px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .album-gallery img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    background: #f2f2f2;
+  }
+
+  footer {
+    margin-top: 80px;
+    margin-bottom: 30px;
+    font-size: 12px;
+    color: #777;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    .site-title {
+      font-size: 34px;
+    }
+
+    .main-nav {
+      gap: 8px;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    .main-nav a {
+      padding: 0 4px;
+    }
+
+    .hero-square {
+      width: 92vw;
+      margin-top: 50px;
+    }
+  }
+
+  .mobile-header {
+    display: none;
+  }
 
   .mobile-menu {
     display: none;
-    max-width: 720px;
-    margin: 0 auto 30px;
-    padding: 0 24px;
   }
 
   .mobile-menu.active {
     display: block;
   }
 
-.hero-square {
-  width: 82vw;
-  margin-top: 70px;
-}
+  .mobile-menu-section {
+    border-bottom: 1px solid #ddd;
+    padding: 18px 0;
+    text-align: left;
+  }
 
-  footer {
-  margin-top: 70px;
-}
+  .mobile-menu-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #666;
+  }
 
-}
+  .mobile-submenu {
+    display: none;
+    margin-top: 14px;
+    padding-left: 18px;
+  }
 
-#lightbox-prev,
-#lightbox-next,
-#lightbox-close {
-  color: black !important;
-}
+  .mobile-submenu.active {
+    display: block;
+  }
 
-@media (max-width: 768px) {
+  .mobile-submenu a {
+    display: block;
+    text-decoration: none;
+    color: #777;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 12px 0;
+    cursor: pointer;
+  }
+
+  .hamburger {
+    position: absolute;
+    left: 24px;
+    top: 58%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 400;
+    cursor: pointer;
+    user-select: none;
+    color: #777;
+  }
+
+  .mobile-header-title {
+    font-family: "Bodoni Moda", serif;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    color: #222;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .site-title,
+    .main-nav,
+    .submenu {
+      display: none !important;
+    }
+
+    .mobile-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 34px 24px 10px;
+    }
+
+    .mobile-menu {
+      display: none;
+      max-width: 720px;
+      margin: 0 auto 30px;
+      padding: 0 24px;
+    }
+
+    .mobile-menu.active {
+      display: block;
+    }
+
+    .hero-square {
+      width: 82vw;
+      margin-top: 70px;
+    }
+
+    footer {
+      margin-top: 70px;
+    }
+  }
+
   #lightbox-prev,
   #lightbox-next,
   #lightbox-close {
-    color: white !important;
+    color: black !important;
   }
-}
 
-    .album-section {
-  content-visibility: auto;
-  contain-intrinsic-size: 1200px;
-}
+  @media (max-width: 768px) {
+    #lightbox-prev,
+    #lightbox-next,
+    #lightbox-close {
+      color: white !important;
+    }
+  }
 
-.album-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  padding-left: clamp(40px, 12vw, 200px);
-  padding-right: clamp(40px, 12vw, 200px);
-}
+  .album-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1200px;
+  }
 
-.album-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 12px;
-  align-items: start;
-}
-
-.album-row.single {
-  grid-template-columns: 1fr;
-}
-
-.album-row img {
-  width: 100%;
-  height: auto;
-  display: block;
-  background: #f2f2f2;
-}
-
-@media (max-width: 768px) {
   .album-gallery {
-    padding-left: 50px;
-    padding-right: 50px;
-    gap: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-left: clamp(40px, 12vw, 200px);
+    padding-right: clamp(40px, 12vw, 200px);
   }
 
   .album-row {
-    column-gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 12px;
+    align-items: start;
   }
-}
-    
-.album-text {
-  max-width: 700px;
-  margin: 0 auto;
-  font-size: 16px;
-  line-height: 1.9;
-  color: #555;
-  text-align: center;
-}
-    
+
+  .album-row.single {
+    grid-template-columns: 1fr;
+  }
+
+  .album-row img {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #f2f2f2;
+  }
+
+  .album-text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.9;
+    color: #555;
+    text-align: center;
+  }
+
+  @media (max-width: 768px) {
+    .album-gallery {
+      padding-left: 50px;
+      padding-right: 50px;
+      gap: 32px;
+    }
+
+    .album-row {
+      column-gap: 10px;
+    }
+
+    .album-text {
+      font-size: 15px;
+      line-height: 1.8;
+    }
+  }
 </style>
 </head>
 <body>
@@ -1140,92 +1140,92 @@ font-family:sans-serif;
 
 </div>
   
-  <script>
-    const heroImages = [
-      "https://drive.google.com/thumbnail?id=1hF8H9V4YFJirXso8m4UTLt4bhxCowWsA&sz=w2000",
-      "https://drive.google.com/thumbnail?id=1-6rapM2XkXxkTjTLenu-nUkRLiDVO2bp&sz=w2000",
+ <script>
+const heroImages = [
+"https://drive.google.com/thumbnail?id=1hF8H9V4YFJirXso8m4UTLt4bhxCowWsA&sz=w2000",
+"https://drive.google.com/thumbnail?id=1-6rapM2XkXxkTjTLenu-nUkRLiDVO2bp&sz=w2000",
 "https://drive.google.com/thumbnail?id=1mrm9foOFnMq5X6raPO41WJ7EQYvz3Kju&sz=w2000",
 "https://drive.google.com/thumbnail?id=1CPJMEp3We_KpCTeCs4CbbDKoxlIxg_SH&sz=w2000"
-    ];
+];
 
-    let heroIndex = 0;
-    const heroImageEl = document.getElementById("hero-image");
-    heroImageEl.src = heroImages[0];
+let heroIndex = 0;
+const heroImageEl = document.getElementById("hero-image");
+heroImageEl.src = heroImages[0];
 
-    setInterval(() => {
-      heroIndex = (heroIndex + 1) % heroImages.length;
-      heroImageEl.src = heroImages[heroIndex];
-    }, 7000);
+setInterval(() => {
+heroIndex = (heroIndex + 1) % heroImages.length;
+heroImageEl.src = heroImages[heroIndex];
+}, 7000);
 
-    function hideAllSubmenus() {
-      document.querySelectorAll(".submenu").forEach(menu => {
-        menu.classList.remove("active");
-      });
-    }
-
-    function hideAllSections() {
-      document.querySelectorAll(".home-section, .album-section").forEach(section => {
-        section.classList.remove("active");
-      });
-    }
-
-    function toggleSubmenu(menuId) {
-      const menu = document.getElementById(menuId);
-      const isOpen = menu.classList.contains("active");
-
-      hideAllSubmenus();
-
-      if (!isOpen) {
-        menu.classList.add("active");
-      }
-    }
-
-    function showHome() {
-  hideAllSubmenus();
-  hideAllSections();
-  closeMobileMenu();
-  document.getElementById("home").classList.add("active");
-}
-    
-   function showAlbum(albumId) {
-  hideAllSubmenus();
-  hideAllSections();
-  closeMobileMenu();
-  document.getElementById(albumId).classList.add("active");
+function hideAllSubmenus() {
+document.querySelectorAll(".submenu").forEach(menu => {
+menu.classList.remove("active");
+});
 }
 
-    function toggleMobileMenu() {
-  const menu = document.getElementById("mobile-menu");
-  menu.classList.toggle("active");
+function hideAllSections() {
+document.querySelectorAll(".home-section, .album-section").forEach(section => {
+section.classList.remove("active");
+});
+}
+
+function toggleSubmenu(menuId) {
+const menu = document.getElementById(menuId);
+const isOpen = menu.classList.contains("active");
+
+hideAllSubmenus();
+
+if (!isOpen) {
+menu.classList.add("active");
+}
+}
+
+function showHome() {
+hideAllSubmenus();
+hideAllSections();
+closeMobileMenu();
+document.getElementById("home").classList.add("active");
+}
+
+function showAlbum(albumId) {
+hideAllSubmenus();
+hideAllSections();
+closeMobileMenu();
+document.getElementById(albumId).classList.add("active");
+}
+
+function toggleMobileMenu() {
+const menu = document.getElementById("mobile-menu");
+menu.classList.toggle("active");
 }
 
 function closeMobileMenu() {
-  const menu = document.getElementById("mobile-menu");
-  menu.classList.remove("active");
+const menu = document.getElementById("mobile-menu");
+menu.classList.remove("active");
 
-  document.querySelectorAll(".mobile-submenu").forEach(submenu => {
-    submenu.classList.remove("active");
-  });
+document.querySelectorAll(".mobile-submenu").forEach(submenu => {
+submenu.classList.remove("active");
+});
 }
 
 function toggleMobileSection(sectionId) {
-  const section = document.getElementById(sectionId);
-  const isOpen = section.classList.contains("active");
+const section = document.getElementById(sectionId);
+const isOpen = section.classList.contains("active");
 
-  document.querySelectorAll(".mobile-submenu").forEach(submenu => {
-    submenu.classList.remove("active");
-  });
+document.querySelectorAll(".mobile-submenu").forEach(submenu => {
+submenu.classList.remove("active");
+});
 
-  if (!isOpen) {
-    section.classList.add("active");
-  }
+if (!isOpen) {
+section.classList.add("active");
+}
 }
 
- // חסימת קליק ימני על תמונות
+// חסימת קליק ימני על תמונות
 document.addEventListener("contextmenu", function(e){
-  if(e.target.tagName === "IMG"){
-    e.preventDefault();
-  }
+if(e.target.tagName === "IMG"){
+e.preventDefault();
+}
 });
 
 let currentAlbumImages = [];
@@ -1233,70 +1233,70 @@ let currentIndex = 0;
 
 document.querySelectorAll(".album-gallery img").forEach(img => {
 
-  img.addEventListener("click", function(){
+img.addEventListener("click", function(){
 
-    const gallery = img.closest(".album-gallery");
-    currentAlbumImages = Array.from(gallery.querySelectorAll("img"));
+const gallery = img.closest(".album-gallery");
+currentAlbumImages = Array.from(gallery.querySelectorAll("img"));
 
-    currentIndex = currentAlbumImages.indexOf(img);
+currentIndex = currentAlbumImages.indexOf(img);
 
-    openLightbox(currentAlbumImages[currentIndex].src);
+openLightbox(currentAlbumImages[currentIndex].src);
 
-  });
+});
 
 });
 
 function openLightbox(src){
 
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
 
-  lightbox.style.display = "flex";
-  lightboxImg.src = src;
+lightbox.style.display = "flex";
+lightboxImg.src = src;
 
 }
 
 function closeLightbox(){
-  document.getElementById("lightbox").style.display = "none";
+document.getElementById("lightbox").style.display = "none";
 }
 
 // סגירה בלחיצה על הרקע
 document.getElementById("lightbox").onclick = function(e){
-  if(e.target.id === "lightbox"){
-    closeLightbox();
-  }
+if(e.target.id === "lightbox"){
+closeLightbox();
+}
 };
 
 // חצים במקלדת
 document.addEventListener("keydown", function(e){
 
-  if(document.getElementById("lightbox").style.display !== "flex") return;
+if(document.getElementById("lightbox").style.display !== "flex") return;
 
-  if(e.key === "ArrowRight"){
-    nextImage();
-  }
+if(e.key === "ArrowRight"){
+nextImage();
+}
 
-  if(e.key === "ArrowLeft"){
-    prevImage();
-  }
+if(e.key === "ArrowLeft"){
+prevImage();
+}
 
-  if(e.key === "Escape"){
-    closeLightbox();
-  }
+if(e.key === "Escape"){
+closeLightbox();
+}
 
 });
 
 function nextImage(){
 
-  currentIndex = (currentIndex + 1) % currentAlbumImages.length;
-  document.getElementById("lightbox-img").src = currentAlbumImages[currentIndex].src;
+currentIndex = (currentIndex + 1) % currentAlbumImages.length;
+document.getElementById("lightbox-img").src = currentAlbumImages[currentIndex].src;
 
 }
 
 function prevImage(){
 
-  currentIndex = (currentIndex - 1 + currentAlbumImages.length) % currentAlbumImages.length;
-  document.getElementById("lightbox-img").src = currentAlbumImages[currentIndex].src;
+currentIndex = (currentIndex - 1 + currentAlbumImages.length) % currentAlbumImages.length;
+document.getElementById("lightbox-img").src = currentAlbumImages[currentIndex].src;
 
 }
 
@@ -1307,156 +1307,152 @@ let touchEndX = 0;
 const lightboxElement = document.getElementById("lightbox");
 
 lightboxElement.addEventListener("touchstart", function(e){
-  touchStartX = e.changedTouches[0].screenX;
+touchStartX = e.changedTouches[0].screenX;
 });
 
 lightboxElement.addEventListener("touchend", function(e){
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
+touchEndX = e.changedTouches[0].screenX;
+handleSwipe();
 });
 
 function handleSwipe(){
 
-  if(Math.abs(touchEndX - touchStartX) < 50) return;
+if(Math.abs(touchEndX - touchStartX) < 50) return;
 
-  if(touchEndX < touchStartX){
-    nextImage();
-  }
+if(touchEndX < touchStartX){
+nextImage();
+}
 
-  if(touchEndX > touchStartX){
-    prevImage();
-  }
+if(touchEndX > touchStartX){
+prevImage();
+}
 
 }
 
 document.getElementById("lightbox-next").onclick = function(e){
-  e.stopPropagation();
-  nextImage();
+e.stopPropagation();
+nextImage();
 };
 
 document.getElementById("lightbox-prev").onclick = function(e){
-  e.stopPropagation();
-  prevImage();
+e.stopPropagation();
+prevImage();
 };
 
 document.getElementById("lightbox-close").onclick = function(e){
-  e.stopPropagation();
-  closeLightbox();
+e.stopPropagation();
+closeLightbox();
 };
-
 
 document.getElementById("lightbox-img").onclick = function(e){
-  e.stopPropagation();
+e.stopPropagation();
 };
 
 
-// בניית גלריה לפי שורות אמיתיות בלי חורים
+// ---------- בניית הגלריה ----------
 
-function createSingleRow(item) {
-  const row = document.createElement("div");
-  row.className = "album-row single";
-  row.appendChild(item);
-  return row;
+function createSingleRow(item){
+const row = document.createElement("div");
+row.className = "album-row single";
+row.appendChild(item);
+return row;
 }
 
-function createPairRow(item1, item2) {
-  const row = document.createElement("div");
-  row.className = "album-row";
-  row.appendChild(item1);
-  row.appendChild(item2);
-  return row;
+function createPairRow(a,b){
+const row = document.createElement("div");
+row.className = "album-row";
+row.appendChild(a);
+row.appendChild(b);
+return row;
 }
 
-function buildAlbumRows() {
-  document.querySelectorAll(".album-gallery").forEach(gallery => {
-    const items = Array.from(gallery.children);
-    const fragment = document.createDocumentFragment();
+function buildAlbumRows(){
 
-    let portraitBuffer = [];
+document.querySelectorAll(".album-gallery").forEach(gallery=>{
 
-    function flushPortraitBuffer() {
-      if (portraitBuffer.length === 1) {
-        fragment.appendChild(createSingleRow(portraitBuffer[0]));
-      } else if (portraitBuffer.length > 1) {
-        for (let i = 0; i < portraitBuffer.length; i += 2) {
-          if (portraitBuffer[i + 1]) {
-            fragment.appendChild(createPairRow(portraitBuffer[i], portraitBuffer[i + 1]));
-          } else {
-            fragment.appendChild(createSingleRow(portraitBuffer[i]));
-          }
-        }
-      }
-      portraitBuffer = [];
-    }
+const items = Array.from(gallery.children);
+const fragment = document.createDocumentFragment();
 
-    items.forEach(item => {
-      if (item.classList.contains("album-text")) {
-        flushPortraitBuffer();
-        fragment.appendChild(item);
-        return;
-      }
+let portraitBuffer = [];
 
-      if (item.tagName !== "IMG") {
-        flushPortraitBuffer();
-        fragment.appendChild(item);
-        return;
-      }
-
-      const w = item.naturalWidth;
-      const h = item.naturalHeight;
-
-      if (!w || !h) {
-        flushPortraitBuffer();
-        fragment.appendChild(createSingleRow(item));
-        return;
-      }
-
-      const isLandscape = w > h;
-      const isSquare = Math.abs(w - h) < 80;
-
-      if (isLandscape || isSquare) {
-        flushPortraitBuffer();
-        fragment.appendChild(createSingleRow(item));
-      } else {
-        portraitBuffer.push(item);
-      }
-    });
-
-    flushPortraitBuffer();
-
-    gallery.innerHTML = "";
-    gallery.appendChild(fragment);
-  });
+function flush(){
+if(portraitBuffer.length===1){
+fragment.appendChild(createSingleRow(portraitBuffer[0]));
+}
+if(portraitBuffer.length===2){
+fragment.appendChild(createPairRow(portraitBuffer[0],portraitBuffer[1]));
+}
+portraitBuffer=[];
 }
 
-function waitForImagesThenBuildRows() {
-  const images = Array.from(document.querySelectorAll(".album-gallery img"));
-  let loaded = 0;
+items.forEach(item=>{
 
-  if (images.length === 0) {
-    buildAlbumRows();
-    return;
-  }
-
-  function done() {
-    loaded++;
-    if (loaded === images.length) {
-      buildAlbumRows();
-    }
-  }
-
-  images.forEach(img => {
-    if (img.complete && img.naturalWidth > 0) {
-      done();
-    } else {
-      img.addEventListener("load", done, { once: true });
-      img.addEventListener("error", done, { once: true });
-    }
-  });
+if(item.classList.contains("album-text")){
+flush();
+fragment.appendChild(item);
+return;
 }
 
-waitForImagesThenBuildRows();
-window.addEventListener("load", buildAlbumRows);
+if(item.tagName!=="IMG"){
+flush();
+fragment.appendChild(item);
+return;
+}
+
+const w=item.naturalWidth;
+const h=item.naturalHeight;
+
+const isLandscape = w>h;
+const isSquare = Math.abs(w-h)<80;
+
+if(isLandscape || isSquare){
+flush();
+fragment.appendChild(createSingleRow(item));
+}
+else{
+portraitBuffer.push(item);
+if(portraitBuffer.length===2){
+flush();
+}
+}
+
+});
+
+flush();
+
+gallery.innerHTML="";
+gallery.appendChild(fragment);
+
+});
+
+}
+
+function waitImages(){
+
+const imgs=[...document.querySelectorAll(".album-gallery img")];
+let loaded=0;
+
+function done(){
+loaded++;
+if(loaded===imgs.length){
+buildAlbumRows();
+}
+}
+
+imgs.forEach(img=>{
+if(img.complete){
+done();
+}else{
+img.onload=done;
+img.onerror=done;
+}
+});
+
+}
+
+waitImages();
+window.addEventListener("load",buildAlbumRows);
+
 </script>
 </body>
 </html>
