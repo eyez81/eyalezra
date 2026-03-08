@@ -343,14 +343,17 @@
   <a class="site-title" onclick="showHome()">EYAL EZRA</a>
 
 <nav class="main-nav">
-  <a onclick="toggleSubmenu('projects-menu')">PROJECTS</a> |
+  <a onclick="toggleSubmenu('collections-menu')">COLLECTIONS</a> |
   <a onclick="toggleSubmenu('portraits-menu')">PORTRAITS</a> |
   <a onclick="toggleSubmenu('travel-menu')">TRAVEL</a> |
   <a onclick="toggleSubmenu('stories-menu')">STORIES</a>
 </nav>
 
-<div id="projects-menu" class="submenu">
-  
+<div id="collections-menu" class="submenu">
+    <a onclick="showAlbum('flora')">FLORA</a>
+    <a onclick="showAlbum('wildlife')">WILDLIFE</a>
+    <a onclick="showAlbum('landscapes')">LANDSCAPES</a>
+    <a onclick="showAlbum('urbanlife')">URBAN LIFE</a>
 </div>
 
 <div id="portraits-menu" class="submenu">
@@ -381,11 +384,14 @@
 
   <div class="mobile-menu-section">
     <div class="mobile-menu-title" onclick="toggleMobileSection('mobile-projects')">
-      <span>PROJECTS</span>
+      <span>COLLECTIONS</span>
       <span>›</span>
     </div>
     <div id="mobile-projects" class="mobile-submenu">
-      
+    <a onclick="showAlbum('flora')">FLORA</a>
+    <a onclick="showAlbum('wildlife')">WILDLIFE</a>
+    <a onclick="showAlbum('landscapes')">LANDSCAPES</a>
+    <a onclick="showAlbum('urbanlife')">URBAN LIFE</a>
       
     </div>
   </div>
