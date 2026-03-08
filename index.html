@@ -803,10 +803,10 @@ function toggleMobileSection(sectionId) {
 }
 
  // חסימת קליק ימני על תמונות
-document.querySelectorAll("img").forEach(img => {
-  img.addEventListener("contextmenu", function(e) {
+document.addEventListener("contextmenu", function(e){
+  if(e.target.tagName === "IMG"){
     e.preventDefault();
-  });
+  }
 });
 
 let currentAlbumImages = [];
@@ -840,8 +840,6 @@ function openLightbox(src){
 function closeLightbox(){
   document.getElementById("lightbox").style.display = "none";
 }
-
-document.getElementById("lightbox-close").onclick = closeLightbox;
 
 // סגירה בלחיצה על הרקע
 document.getElementById("lightbox").onclick = function(e){
