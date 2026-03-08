@@ -326,9 +326,7 @@
     row-gap: 32px;
   }
 }
-
-}
-
+    
     .album-text {
   grid-column: span 2;
   max-width: 700px;
@@ -1354,36 +1352,49 @@ document.getElementById("lightbox-img").onclick = function(e){
 };
 
 
-// זיהוי תמונות אנכיות / אופקיות
+// זיהוי תמונות אנכיות / אופקיות לפי רצף אמיתי בגלריה
 
 function classifyGalleryImages() {
   document.querySelectorAll(".album-gallery").forEach(gallery => {
-    const images = Array.from(gallery.querySelectorAll("img"));
+    const children = Array.from(gallery.children);
 
-    images.forEach(img => {
+    // ניקוי מחלקות קודמות
+    gallery.querySelectorAll("img").forEach(img => {
       img.classList.remove("landscape", "square", "single-portrait");
     });
 
-    const portraitBuffer = [];
+    let portraitRun = [];
 
-    images.forEach(img => {
-      const w = img.naturalWidth;
-      const h = img.naturalHeight;
+    function flushPortraitRun() {
+      if (portraitRun.length % 2 !== 0) {
+        portraitRun[portraitRun.length - 1].classList.add("single-portrait");
+      }
+      portraitRun = [];
+    }
+
+    children.forEach(el => {
+      if (el.tagName !== "IMG") {
+        flushPortraitRun();
+        return;
+      }
+
+      const w = el.naturalWidth;
+      const h = el.naturalHeight;
 
       if (!w || !h) return;
 
       if (w > h) {
-        img.classList.add("landscape");
+        el.classList.add("landscape");
+        flushPortraitRun();
       } else if (Math.abs(w - h) < 80) {
-        img.classList.add("square");
+        el.classList.add("square");
+        flushPortraitRun();
       } else {
-        portraitBuffer.push(img);
+        portraitRun.push(el);
       }
     });
 
-    if (portraitBuffer.length % 2 !== 0) {
-      portraitBuffer[portraitBuffer.length - 1].classList.add("single-portrait");
-    }
+    flushPortraitRun();
   });
 }
 
@@ -1415,7 +1426,6 @@ function waitForImagesThenClassify() {
 
 waitForImagesThenClassify();
 window.addEventListener("load", classifyGalleryImages);
-
 </script>
 </body>
 </html>
