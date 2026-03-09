@@ -18,20 +18,62 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 7000);
   }
 
+  window.hideAllSubmenus = function () {
+    document.querySelectorAll(".submenu").forEach(menu => {
+      menu.classList.remove("active");
+    });
+  };
+
+  window.toggleSubmenu = function (menuId) {
+    const menu = document.getElementById(menuId);
+    if (!menu) return;
+
+    const isOpen = menu.classList.contains("active");
+    hideAllSubmenus();
+
+    if (!isOpen) {
+      menu.classList.add("active");
+    }
+  };
+
+  document.addEventListener("click", function (e) {
+    const clickedInsideDesktopNav =
+      e.target.closest(".main-nav") || e.target.closest(".submenu");
+
+    if (!clickedInsideDesktopNav) {
+      hideAllSubmenus();
+    }
+  });
+
   const mobileMenu = document.getElementById("mobile-menu");
+
   window.toggleMobileMenu = function () {
     if (mobileMenu) {
       mobileMenu.classList.toggle("active");
     }
   };
 
+  window.closeMobileMenu = function () {
+    if (mobileMenu) {
+      mobileMenu.classList.remove("active");
+    }
+
+    document.querySelectorAll(".mobile-submenu").forEach(submenu => {
+      submenu.classList.remove("active");
+    });
+  };
+
   window.toggleMobileSection = function (sectionId) {
     const section = document.getElementById(sectionId);
-    const all = document.querySelectorAll(".mobile-submenu");
+    if (!section) return;
 
-    all.forEach(submenu => submenu.classList.remove("active"));
+    const isOpen = section.classList.contains("active");
 
-    if (section && !section.classList.contains("active")) {
+    document.querySelectorAll(".mobile-submenu").forEach(submenu => {
+      submenu.classList.remove("active");
+    });
+
+    if (!isOpen) {
       section.classList.add("active");
     }
   };
@@ -63,13 +105,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function nextImage() {
-    if (!currentAlbumImages.length) return;
+    if (!currentAlbumImages.length || !lightboxImg) return;
     currentIndex = (currentIndex + 1) % currentAlbumImages.length;
     lightboxImg.src = currentAlbumImages[currentIndex].src;
   }
 
   function prevImage() {
-    if (!currentAlbumImages.length) return;
+    if (!currentAlbumImages.length || !lightboxImg) return;
     currentIndex = (currentIndex - 1 + currentAlbumImages.length) % currentAlbumImages.length;
     lightboxImg.src = currentAlbumImages[currentIndex].src;
   }
@@ -77,8 +119,11 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".album-gallery img").forEach(img => {
     img.addEventListener("click", function () {
       const gallery = img.closest(".album-gallery");
+      if (!gallery) return;
+
       currentAlbumImages = Array.from(gallery.querySelectorAll("img"));
       currentIndex = currentAlbumImages.indexOf(img);
+
       openLightbox(currentAlbumImages[currentIndex].src);
     });
 
@@ -116,7 +161,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     lightbox.addEventListener("touchend", function (e) {
       touchEndX = e.changedTouches[0].screenX;
+
       if (Math.abs(touchEndX - touchStartX) < 50) return;
+
       if (touchEndX < touchStartX) nextImage();
       if (touchEndX > touchStartX) prevImage();
     });
@@ -155,5 +202,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.key === "ArrowRight") nextImage();
     if (e.key === "ArrowLeft") prevImage();
     if (e.key === "Escape") closeLightbox();
+  });
+
+  document.querySelectorAll(".mobile-submenu a").forEach(link => {
+    link.addEventListener("click", function () {
+      closeMobileMenu();
+    });
   });
 });
