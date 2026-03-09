@@ -13,11 +13,92 @@
   <a class="site-title" href="index.html">EYAL EZRA</a>
 
   <nav class="main-nav">
-    <a href="collections.html">COLLECTIONS</a> |
-    <a href="portraits.html">PORTRAITS</a> |
-    <a href="travel.html">TRAVEL</a> |
-    <a href="stories.html">STORIES</a>
+    <a href="#" onclick="toggleSubmenu('collections-menu'); return false;">COLLECTIONS</a> |
+    <a href="#" onclick="toggleSubmenu('portraits-menu'); return false;">PORTRAITS</a> |
+    <a href="#" onclick="toggleSubmenu('travel-menu'); return false;">TRAVEL</a> |
+    <a href="#" onclick="toggleSubmenu('stories-menu'); return false;">STORIES</a>
   </nav>
+
+  <div id="collections-menu" class="submenu">
+    <a href="collections.html#flora">FLORA</a>
+    <a href="collections.html#wildlife">WILDLIFE</a>
+    <a href="collections.html#landscapes">LANDSCAPES</a>
+    <a href="collections.html#urbanlife">URBAN LIFE</a>
+  </div>
+
+  <div id="portraits-menu" class="submenu">
+    <a href="portraits.html">PORTRAITS</a>
+  </div>
+
+  <div id="travel-menu" class="submenu">
+    <a href="travel.html#Athens">ATHENS</a>
+    <a href="travel.html#Prague">PRAGUE</a>
+    <a href="travel.html#Barcelona">BARCELONA</a>
+    <a href="travel.html#rome">ROME</a>
+    <a href="travel.html#usa1">USA 18</a>
+    <a href="travel.html#usa2">USA 19</a>
+    <a href="travel.html#usa3">USA 22</a>
+  </div>
+
+  <div id="stories-menu" class="submenu">
+    <a href="stories.html#degania-alef">DEGANIA ALEF</a>
+  </div>
+
+  <div class="mobile-header">
+    <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
+    <a class="mobile-header-title" href="index.html">EYAL EZRA</a>
+  </div>
+
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu-section">
+      <div class="mobile-menu-title" onclick="toggleMobileSection('mobile-projects')">
+        <span>COLLECTIONS</span>
+        <span>›</span>
+      </div>
+      <div id="mobile-projects" class="mobile-submenu">
+        <a href="collections.html#flora">FLORA</a>
+        <a href="collections.html#wildlife">WILDLIFE</a>
+        <a href="collections.html#landscapes">LANDSCAPES</a>
+        <a href="collections.html#urbanlife">URBAN LIFE</a>
+      </div>
+    </div>
+
+    <div class="mobile-menu-section">
+      <div class="mobile-menu-title" onclick="toggleMobileSection('mobile-portraits')">
+        <span>PORTRAITS</span>
+        <span>›</span>
+      </div>
+      <div id="mobile-portraits" class="mobile-submenu">
+        <a href="portraits.html">PORTRAITS</a>
+      </div>
+    </div>
+
+    <div class="mobile-menu-section">
+      <div class="mobile-menu-title" onclick="toggleMobileSection('mobile-travel')">
+        <span>TRAVEL</span>
+        <span>›</span>
+      </div>
+      <div id="mobile-travel" class="mobile-submenu">
+        <a href="travel.html#Athens">ATHENS</a>
+        <a href="travel.html#Prague">PRAGUE</a>
+        <a href="travel.html#Barcelona">BARCELONA</a>
+        <a href="travel.html#rome">ROME</a>
+        <a href="travel.html#usa1">USA 18</a>
+        <a href="travel.html#usa2">USA 19</a>
+        <a href="travel.html#usa3">USA 22</a>
+      </div>
+    </div>
+
+    <div class="mobile-menu-section">
+      <div class="mobile-menu-title" onclick="toggleMobileSection('mobile-stories')">
+        <span>STORIES</span>
+        <span>›</span>
+      </div>
+      <div id="mobile-stories" class="mobile-submenu">
+        <a href="stories.html#degania-alef">DEGANIA ALEF</a>
+      </div>
+    </div>
+  </div>
 
   <div class="content">
     <section class="album-section">
