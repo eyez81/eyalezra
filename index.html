@@ -4,125 +4,1377 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>EYAL EZRA</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&display=swap" rel="stylesheet">
-
+  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&display=swap" rel="stylesheet">
+  
   <meta property="og:title" content="Eyal Ezra Photography">
-  <meta property="og:description" content="Photography projects, portraits and travel stories by Eyal Ezra">
-  <meta property="og:image" content="https://drive.google.com/thumbnail?id=1hF8H9V4YFJirXso8m4UTLt4bhxCowWsA&sz=w2000">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://eyez81.github.io/eyalezra/">
+<meta property="og:description" content="Photography projects, portraits and travel stories by Eyal Ezra">
+<meta property="og:image" content="https://drive.google.com/thumbnail?id=1hF8H9V4YFJirXso8m4UTLt4bhxCowWsA&sz=w2000">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://eyez81.github.io/eyalezra/">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Eyal Ezra Photography">
-  <meta name="twitter:description" content="Photography projects, portraits and travel stories by Eyal Ezra">
-  <meta name="twitter:image" content="https://drive.google.com/thumbnail?id=1hF8H9V4YFJirXso8m4UTLt4bhxCowWsA&sz=w2000">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Eyal Ezra Photography">
+<meta name="twitter:description" content="Photography projects, portraits and travel stories by Eyal Ezra">
+<meta name="twitter:image" content="https://drive.google.com/thumbnail?id=1hF8H9V4YFJirXso8m4UTLt4bhxCowWsA&sz=w2000">
+  
+  <style>
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: #222;
+      font-family: Georgia, "Times New Roman", serif;
+      text-align: center;
+    }
 
-  <link rel="stylesheet" href="css/style.css">
+   .site-title {
+  display: inline-block;
+  margin-top: 36px;
+  margin-bottom: 24px;
+  font-family: "Bodoni Moda", serif;
+  font-size: 58px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: #222;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+    .main-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  margin-bottom: 24px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+    .main-nav a {
+      text-decoration: none;
+      color: #222;
+      cursor: pointer;
+    }
+
+    .submenu {
+      display: none;
+      margin-bottom: 32px;
+    }
+
+    .submenu.active {
+      display: block;
+    }
+
+    .submenu a {
+      display: block;
+      text-decoration: none;
+      color: #444;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    .content {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+
+    .home-section,
+    .album-section {
+      display: none;
+    }
+
+    .home-section.active,
+    .album-section.active {
+      display: block;
+    }
+
+    .hero-square {
+      width: min(82vw, 760px);
+      aspect-ratio: 1 / 1;
+      margin: 80px auto 0;
+      overflow: hidden;
+      background: #f2f2f2;
+    }
+
+    .hero-square img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .album-title {
+      margin: 20px 0 30px;
+      font-size: 18px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .album-gallery img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      background: #f2f2f2;
+    }
+
+    footer {
+      margin-top: 80px;
+      margin-bottom: 30px;
+      font-size: 12px;
+      color: #777;
+      letter-spacing: 1px;
+    }
+
+ @media (max-width: 768px) {
+
+  .site-title {
+    font-size: 34px;
+  }
+
+  .main-nav {
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .main-nav a {
+    padding: 0 4px;
+  }
+
+  .hero-square {
+    width: 92vw;
+    margin-top: 50px;
+  }
+
+}
+
+    .mobile-header {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-menu-section {
+  border-bottom: 1px solid #ddd;
+  padding: 18px 0;
+  text-align: left;
+}
+
+.mobile-menu-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #666;
+}
+
+.mobile-submenu {
+  display: none;
+  margin-top: 14px;
+  padding-left: 18px;
+}
+
+.mobile-submenu.active {
+  display: block;
+}
+
+.mobile-submenu a {
+  display: block;
+  text-decoration: none;
+  color: #777;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 12px 0;
+  cursor: pointer;
+}
+
+.hamburger {
+  position: absolute;
+  left: 24px;
+  top: 58%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  line-height: 1;
+  font-weight: 400;
+  cursor: pointer;
+  user-select: none;
+  color: #777;
+}
+
+.mobile-header-title {
+  font-family: "Bodoni Moda", serif;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  color: #222;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  .site-title,
+  .main-nav,
+  .submenu {
+    display: none !important;
+  }
+
+ .mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 34px 24px 10px;
+}
+
+  .mobile-menu {
+    display: none;
+    max-width: 720px;
+    margin: 0 auto 30px;
+    padding: 0 24px;
+  }
+
+  .mobile-menu.active {
+    display: block;
+  }
+
+.hero-square {
+  width: 82vw;
+  margin-top: 70px;
+}
+
+  footer {
+  margin-top: 70px;
+}
+
+}
+
+#lightbox-prev,
+#lightbox-next,
+#lightbox-close {
+  color: black !important;
+}
+
+@media (max-width: 768px) {
+  #lightbox-prev,
+  #lightbox-next,
+  #lightbox-close {
+    color: white !important;
+  }
+}
+
+    .album-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 1200px;
+}
+
+.album-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 12px;
+  row-gap: 40px;
+  padding-left: clamp(40px, 12vw, 200px);
+  padding-right: clamp(40px, 12vw, 200px);
+  grid-auto-flow: dense;
+}
+
+.album-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* תמונה אופקית */
+.album-gallery img.landscape {
+  grid-column: span 2;
+}
+
+/* תמונה ריבועית */
+.album-gallery img.square {
+  grid-column: span 2;
+}
+
+/* מובייל */
+
+@media (max-width: 768px) {
+
+  .album-gallery {
+    padding-left: 50px;
+    padding-right: 50px;
+    column-gap: 10px;
+    row-gap: 32px;
+  }
+
+}
+
+    .album-text {
+  grid-column: span 2;
+  max-width: 700px;
+  margin: 10px auto 10px auto;
+  font-size: 16px;
+  line-height: 1.9;
+  color: #555;
+  text-align: center;
+}
+    
+</style>
 </head>
 <body>
-  <a class="site-title" href="index.html">EYAL EZRA</a>
+  <a class="site-title" onclick="showHome()">EYAL EZRA</a>
 
-  <nav class="main-nav">
-    <a href="#" onclick="toggleSubmenu('collections-menu'); return false;">COLLECTIONS</a> |
-    <a href="#" onclick="toggleSubmenu('portraits-menu'); return false;">PORTRAITS</a> |
-    <a href="#" onclick="toggleSubmenu('travel-menu'); return false;">TRAVEL</a> |
-    <a href="#" onclick="toggleSubmenu('stories-menu'); return false;">STORIES</a>
-  </nav>
+<nav class="main-nav">
+  <a onclick="toggleSubmenu('collections-menu')">COLLECTIONS</a> |
+  <a onclick="toggleSubmenu('portraits-menu')">PORTRAITS</a> |
+  <a onclick="toggleSubmenu('travel-menu')">TRAVEL</a> |
+  <a onclick="toggleSubmenu('stories-menu')">STORIES</a>
+</nav>
 
-  <div id="collections-menu" class="submenu">
-    <a href="collections.html#flora">FLORA</a>
-    <a href="collections.html#wildlife">WILDLIFE</a>
-    <a href="collections.html#landscapes">LANDSCAPES</a>
-    <a href="collections.html#urbanlife">URBAN LIFE</a>
-  </div>
+<div id="collections-menu" class="submenu">
+    <a onclick="showAlbum('flora')">FLORA</a>
+    <a onclick="showAlbum('wildlife')">WILDLIFE</a>
+    <a onclick="showAlbum('landscapes')">LANDSCAPES</a>
+    <a onclick="showAlbum('urbanlife')">URBAN LIFE</a>
+</div>
 
-  <div id="portraits-menu" class="submenu">
-    <a href="portraits.html">PORTRAITS</a>
-  </div>
+<div id="portraits-menu" class="submenu">
+  
+</div>
 
-  <div id="travel-menu" class="submenu">
-    <a href="travel.html#Athens">ATHENS</a>
-    <a href="travel.html#Prague">PRAGUE</a>
-    <a href="travel.html#Barcelona">BARCELONA</a>
-    <a href="travel.html#rome">ROME</a>
-    <a href="travel.html#usa1">USA 18</a>
-    <a href="travel.html#usa2">USA 19</a>
-    <a href="travel.html#usa3">USA 22</a>
-  </div>
+<div id="travel-menu" class="submenu">
+  <a onclick="showAlbum('Athens')">ATHENS</a>
+  <a onclick="showAlbum('Prague')">PRAGUE</a>
+  <a onclick="showAlbum('Barcelona')">BARCELONA</a>
+  <a onclick="showAlbum('rome')">ROME</a>
+  <a onclick="showAlbum('usa1')">USA 18</a>
+  <a onclick="showAlbum('usa2')">USA 19</a>
+  <a onclick="showAlbum('usa3')">USA 22</a>
 
-  <div id="stories-menu" class="submenu">
-    <a href="stories.html#degania-alef">DEGANIA ALEF</a>
-  </div>
+</div>
 
-  <div class="mobile-header">
-    <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
-    <a class="mobile-header-title" href="index.html">EYAL EZRA</a>
-  </div>
+<div id="stories-menu" class="submenu">
+  <a onclick="showAlbum('degania-alef')">DEGANIA ALEF</a>
+</div>
 
-  <div id="mobile-menu" class="mobile-menu">
-    <div class="mobile-menu-section">
-      <div class="mobile-menu-title" onclick="toggleMobileSection('mobile-projects')">
-        <span>COLLECTIONS</span>
-        <span>›</span>
-      </div>
-      <div id="mobile-projects" class="mobile-submenu">
-        <a href="collections.html#flora">FLORA</a>
-        <a href="collections.html#wildlife">WILDLIFE</a>
-        <a href="collections.html#landscapes">LANDSCAPES</a>
-        <a href="collections.html#urbanlife">URBAN LIFE</a>
-      </div>
+<div class="mobile-header">
+  <div class="hamburger" onclick="toggleMobileMenu()">☰</div>
+  <a class="mobile-header-title" onclick="showHome()">EYAL EZRA</a>
+</div>
+
+<div id="mobile-menu" class="mobile-menu">
+
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-title" onclick="toggleMobileSection('mobile-projects')">
+      <span>COLLECTIONS</span>
+      <span>›</span>
     </div>
-
-    <div class="mobile-menu-section">
-      <div class="mobile-menu-title" onclick="toggleMobileSection('mobile-portraits')">
-        <span>PORTRAITS</span>
-        <span>›</span>
-      </div>
-      <div id="mobile-portraits" class="mobile-submenu">
-        <a href="portraits.html">PORTRAITS</a>
-      </div>
-    </div>
-
-    <div class="mobile-menu-section">
-      <div class="mobile-menu-title" onclick="toggleMobileSection('mobile-travel')">
-        <span>TRAVEL</span>
-        <span>›</span>
-      </div>
-      <div id="mobile-travel" class="mobile-submenu">
-        <a href="travel.html#Athens">ATHENS</a>
-        <a href="travel.html#Prague">PRAGUE</a>
-        <a href="travel.html#Barcelona">BARCELONA</a>
-        <a href="travel.html#rome">ROME</a>
-        <a href="travel.html#usa1">USA 18</a>
-        <a href="travel.html#usa2">USA 19</a>
-        <a href="travel.html#usa3">USA 22</a>
-      </div>
-    </div>
-
-    <div class="mobile-menu-section">
-      <div class="mobile-menu-title" onclick="toggleMobileSection('mobile-stories')">
-        <span>STORIES</span>
-        <span>›</span>
-      </div>
-      <div id="mobile-stories" class="mobile-submenu">
-        <a href="stories.html#degania-alef">DEGANIA ALEF</a>
-      </div>
+    <div id="mobile-projects" class="mobile-submenu">
+    <a onclick="showAlbum('flora')">FLORA</a>
+    <a onclick="showAlbum('wildlife')">WILDLIFE</a>
+    <a onclick="showAlbum('landscapes')">LANDSCAPES</a>
+    <a onclick="showAlbum('urbanlife')">URBAN LIFE</a>
+      
     </div>
   </div>
+
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-title" onclick="toggleMobileSection('mobile-portraits')">
+      <span>PORTRAITS</span>
+      <span>›</span>
+    </div>
+    <div id="mobile-portraits" class="mobile-submenu">
+
+    </div>
+  </div>
+
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-title" onclick="toggleMobileSection('mobile-travel')">
+      <span>TRAVEL</span>
+      <span>›</span>
+    </div>
+    <div id="mobile-travel" class="mobile-submenu">
+      <a onclick="showAlbum('Athens')">ATHENS</a>
+      <a onclick="showAlbum('Prague')">PRAGUE</a>
+      <a onclick="showAlbum('Barcelona')">BARCELONA</a>
+      <a onclick="showAlbum('rome')">ROME</a>
+      <a onclick="showAlbum('usa1')">USA 18</a>
+      <a onclick="showAlbum('usa2')">USA 19</a>
+      <a onclick="showAlbum('usa3')">USA 22</a>
+    </div>
+  </div>
+
+  <div class="mobile-menu-section">
+    <div class="mobile-menu-title" onclick="toggleMobileSection('mobile-stories')">
+      <span>STORIES</span>
+      <span>›</span>
+    </div>
+    <div id="mobile-stories" class="mobile-submenu">
+     <a onclick="showAlbum('degania-alef')">DEGANIA ALEF</a>
+    </div>
+  </div>
+
+</div>
 
   <div class="content">
-    <section>
+    <section id="home" class="home-section active">
       <div class="hero-square">
         <img id="hero-image" src="" alt="Home image" />
       </div>
     </section>
+
+<section id="degania-alef" class="album-section">
+  <div class="album-title">DEGANIA ALEF</div>
+  <div class="album-gallery">
+   <img loading="lazy" src="https://drive.google.com/thumbnail?id=1f16XJAWw2zm3aPkkid4kv4AAY248xUHQ&sz=w1200" alt="">
+    <div class="album-text">
+  <p>
+    There are places we pass through every day without truly stopping to look. Degania Alef, the kibbutz where I live, is familiar to me in almost every path, tree, and corner. Yet when I went out to photograph it, I discovered that it is full of small details that usually disappear into the routine of daily life.
+  </p>
+
+  <p>
+    This album is not an attempt to document the kibbutz in a formal or historical way. Instead, it is an attempt to pause for a moment and look at the simple things — the marks of time, everyday objects, and quiet corners that most of us pass by without noticing. Through the camera, I tried to find the beauty in the small details, the stories hidden within the most ordinary things, and the unique feeling of a place that may seem calm and simple, yet is full of memories, life, and history.
+  </p>
+</div>
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1He8zbyVXb4YOlP6Iingzt3_DbTCNjfvp&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=10O93DMrzU7k4YN-N6NzIcUy2M8X-0c7N&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1eVikGVeiXrXTyqYp_4ZGNFqe6n7u3-_S&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1txQpb6sWq_Eyw1kaHKlvYoDSO5fsqqmM&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=137p3vd7oTUH2OP0ZTFUxHuPrN8wjQiDN&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1RP_UfUhG7Bj8YnS80uz4g5Iw5OrwPtUp&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1zwPZEJbRf48rC4zEjhMFLJt9zgqcQHP5&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1evmwzT-gG_UZO3peyX8g7KJ7yQfh35SU&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1w5jfIkxiwTF6SH44wswCJb2osGlaFach&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1-0ZXnw28g23uZiRn1S4YaR78Q5MKdKaL&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1XVQQLRICejT391IjVU-IOtRBYT-q2FwP&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1eoz4-dNgRm4qtzytZmAsSjlDTyfMVvjX&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1R06cm4MXsCLsABtJ16g7js5bIKKQuvl-&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1gZPqvdSbhP6OhpOpg01xzNFj3m9VcSkp&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1DDAo8Wwlr-eFWPwSIWdpwGSIvraasZ7Y&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1fqUIhwrcJqG3A3xKteaS80MAHT2OTztj&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1l-CEuyCKehBZaCOFk7LvHrtD71wFL2iB&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1i-UbryTiw4YUuu9mCNaNvCySUdn3NM1l&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1s717JtjuSszIoSl0_fEnuUcysbzVZ8a1&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Ob4u3dhsQN3N8WarF8ChmQjHuGsTyauH&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1lf_Qb9-YyLFxM38U7w40ikxdCegrIXZZ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1F1OPD8oSflWywThg8e6T8Udfg_PlJBuu&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1glGBNsfo0acEEFQjL4TA-wRKP4myNCmi&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1GxsQ2URGJ6Doy50cUNXk_W2GaXAPmIND&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1ceSrdf_-pyzlcOanLrahGf7cC001lRxi&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1P-Htq6LRLLEaJfoqYJZJLlmaQsvumNFG&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1o9VR5KNTHdCDIhyE8i_UBnIszae-km7m&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1i_te0QAKmia1I5HOHJngW8TK7aRirOwV&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=10B1z0W8TBBv3fzi0wOzOK_b3W9XOXhk7&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1APtlTazkHMN_w006YyGU0oIq-rWvksPJ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=17KE8bAnAYQdHGaBdMHgINaFAiDw9ddrH&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Y9yWKm0QRZCXk0XHe-V6saUobS7du__2&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1XxMwN-tAdzHgbSreKoBa4UrJ0r8tOIYQ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1KImcopECu-5RElNmQchtNE3a2qAfPyGo&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1vjJ3pzp5q6Pz3MSljB9DKWyz5LPFrjCP&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1LpUMU5FTT8PYEyvMVWzHfLAjAj6phua7&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1AtFK47hh80TF3bfvekFwZSeuFeZhNLfj&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1JbN151sZUK_XauS85eWcKuzd5TCSuU9m&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=172nD6Zm_ZBY4qj40CxgWq_BLZLPZt8Bm&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1wDAoonnDquhPs2SzBa5mbB3YctzUZPeZ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1g5DMOFusekcmrhN5XQiFCay7LHtu881C&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1i7Or2BNHUDHcgPjnYA19rGt-IDnw1JIm&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1-aH0wgV6_D-ZcokGnOnZu25uUM2CRkTd&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1V2n3T6s1JaBwVFZrA32EU74vkwA4uimk&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1KgQeumf-2-l-8rxprwYhgmgHX1o8c-nt&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1eLkFDMl8c6PFqoylqZK5fG2YC9uHFeXR&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1SX33euuevvUAFkdJppBXhRhxieCwKgGe&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1PsxMQ9Q5AxEQsCwo71BKbFqtCf5iu8-h&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1fH3I7cj-vCupEYyVNiL5r09L4vKiBOcP&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=16QLeG2kKR1IyibUoN7JfVdPYvpbnAArW&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1eO_E1_DdrT9KEDLgd5HIbOYsIr-Q5mvI&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1HxiWcBpROpOU_AFfwxNxNAN03i-yjunn&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1dmTzFUVcd-7OCxFO0GGgYkbmdABOuUHD&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Q4j45owZKyQ_PMSa1phzTnS6Z23MQuOd&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=12BnZFzWw5dQYUbxZlHtrYc3qAMC6sJ2Z&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1NNt5jM5MWL0xt3X76Zxy3q0h0b6lSjuo&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1uEAV81jKpxZEgcGFeSBHfbSI90u0RI7w&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1oditq_W3R74Med8J_HWduppQGQdlMMeX&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1GVcBjaTJZxF5rIzn9rt4u8kpTjgWqaZN&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1BFU06ZkYz5EXnKH37_1-Q6b6-k74Jg10&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1hxmKAj1Heb5C4EZ4wKD1VkBndLLpgweO&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1m-jz2G2-DbDU2KkUSdgcFx5XSe3dzt1n&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Zv9cu5lKe55UTsTbMfyNvgrKKTkfFOwZ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1FJ0hCwkLXoktA8FNLQyL_wFHrAymZ2gp&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1HBb-UdNU-rYBVolP18Gfjg-kM7MxEPa_&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1zmc6LHKhWUA--xeaclz9BfmsEW1pDBso&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1mwqd9qIecOltwgABii1b-WoZsBrZEeOy&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1CsawavFA4P7Opae5oKbSK11Wg9w_emVA&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1UOXksbUpz2lPgWpNTBnnq6bmQhjqvhxC&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1B3p47xAkw71ZkCYpzk7dT4m-vTi_SZ_U&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1PFeBIeAG4ip5ElTPDqNUTcsCHr1ZBKyZ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1qZ4TFbTY0WJ7ZPCTbMWyGTnMg9XmMF_0&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1v7DluxCkqJc1dE_ToNit1uAKJhIPtMc1&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1ZtfZ_gisJdWJE0aQ3OTuZx79ZXDK8zle&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1h4WYeTb9FY7jvYwfsvAXwESdjE58NKb3&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1ljO1itl9giUlt9-oqy9zIe72-d5sw7eR&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1boUs4HTSyhNC02ZaJnxtDD_1iG5bLflt&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1aaunomnvQ9K7uDMmFiTUjbv6gDB49A6j&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1DPxVqpg0HLNVMb4XTB4nglOr-gfQ2MRg&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1xkqd5U1_IFIuAuClP7uUrcBivVKjjloS&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1MBCHs6HD3_BP2dkxqefepgyWO8UlpuoA&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1g3McQNiR4mgVOe338Pec8F7C7TwaiDzB&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1b_HCVjcsDYOfGEeVp_pafFRXu7Ll9mYI&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1OGpnBWQJgI9KeW92vWL2jQhJ1EKgd0oA&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1X-ICkl0agU5UQvJe2sbxQMzZAjWcqYT3&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1i7Bos2MZhx2iiY4Xe0SXrVo2FDoFihKj&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1x1cEw6siOrrOhni9zCWIkp_rAfhrILnl&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=100_uHS9UCOsURK0IDHOkqEnuuhMnUJvS&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1MvNXTVRECeofxNEyrWBXsmCX_YAiY_Z6&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1zvJSqYlUGQBlbmjQPTKp5VNF_JEy62f2&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1KllKJEZlb-sYmoYaWDpM7_di_3lCCNst&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Pmm1FijuENPQh_DEWRxK-XCyTiA7XNGW&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1SnHQIZ8ZxYjf4HOzzMfzdR32uBTh8tvr&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1_jxMEnZac8xAYg0-a3bnKSV82le0ZeAb&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1csvrJYaBAncLbGBwWCEncMjBBFYFjgn1&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1_Fvdk82JH_H3wXyPB4JLFV9l0uCMgHt6&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1mL-rxIkCvKMRtOeS32tT9xsiC9fCgXDM&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1N-l8CM7F7y64yO4zLAIA4Ra9lpjpYU6U&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=122hzYhlRjmeAiXS8wI1IfIy4EwGwiFRh&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1KzGr9tydJI7WiX5hV1tqRGPXcp_knEGM&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1VCUqYQ4VexAdpGtMCp4GMOTK_6dn9Mj0&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1q9Q2ID8mbOPOBDcJhCoG2lrNFNn9BU3c&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1aAgMRLRNfKEfRVeEg1OQdc3PONBCZQKw&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1xXhUc0QpBDM5VC0UtVTd5_3yxIMx7y45&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=16Ksqvl6dwdxNpxnlz2nHe79jP8I_D02x&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=12JrxeB2CleywIfyPuN41zdf39tBP3QPI&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1qJiCRFaYeWG9apKRmiWgUkL5zbosRv0l&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Y873_8-muED-qp9pXE1O9izJZOz24m0S&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1rheO3IWLA5_JetRMw9GaQpJ9DI-Md477&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1bai_rqjgJhyPkQsyVlnnGzMeZ7_xnWBG&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1F_caW9AH--9kUinUElg3JuAJL_A5LUAP&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1GBABILqWPdXsG7HLID4n_5bxh17nnNWi&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Fb4vTmTKHWIhZMpgcAiBgOMu91hv4cQw&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1mJxrZF_BR-1MRaCjtMJT8xV5edGQ_ThY&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1SM-j8ppAbJU2zoeGmGq1KLNBf9Yfpmrh&sz=w1200" alt="">
+  </div>
+</section>
+
+
+   <section id="Athens" class="album-section">
+  <div class="album-title">Athens</div>
+  <div class="album-gallery">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1UvYhy9P5K5RqULzmPfk-iuBoSwcp_vHt&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Tv3z1Y-MZvaMt6JuapkvA6ABTgsAxIOm&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1xbS0cFCtR3X6E8G-YtVRT6-p1F1h4YQh&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=11a9cMlaF5juu4J-VUeu62V7WoE-MfRWg&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1NpYERlRoJ2EVDmZbf-MFBu-E8AHS11LH&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=14WkjXdfdnRIbRz1uANz5MH_dUuJD6fSb&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1_e-IwovD2deFr42mG2UCk1EzIFQiZxD6&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=15-6zhbK3pxIiVIpS5exDLqzKBFyk2TVO&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1ZBjcQWMTvLuGqP4WrC_EUBqUpzDVqgjb&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1iqWMla0V7CLTiH6anXnYjPC11l7OR_A8&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1c_2Qk9wZ1gvOD3gpx5Nxd--CLtQrc-4r&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1sc861GJYmWQjn9ni-AifO5NPdKKxAM8f&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1J21ScNiBj_WtpSL5l6f9aiuG3Wya7-c6&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=18V-VC94XT7UUImqDEUBNWNUH-c58DHDv&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1u4H3v7E6WitOBb3riGH1IV5KSJbeFnHg&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1RBcHwYV4IhU95ywU_Nqa2txQSGuCk6fQ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1LwH2XS8ndu4Tg-C9EsIWVn6GNsHiTSCL&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1mrm9foOFnMq5X6raPO41WJ7EQYvz3Kju&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Y7FzqL7Dh8etgAcoWK-e5u3WUFRuQ0pr&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1CPJMEp3We_KpCTeCs4CbbDKoxlIxg_SH&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1T2WtAzHXbOhane02KJDKMLWUl7JX0x81&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1IDzt-tEb9EKsmUWepv0bfP6lZQVgkL24&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1RDxTx-8kg8rdLV5u9X6DNwhoWc4WCRDc&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1vBJpe3d3IykCNG0OGrJkVB2iTA2qxlh2&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1vfbp4iqa3_XfhtOAdFlPdBgWNR1GkDZR&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1hF8H9V4YFJirXso8m4UTLt4bhxCowWsA&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=14x1sMW3GzdqywyKVLlW9NXUWi3j0ZkMG&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1uI1M5F9WToCa1DBP-opNpCACUKDOMP8y&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Dxr_mPzTt9ZXRm8am2JuMurvwmLHvux8&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=18WdH9xNgaYTYnqo5bMkTVnbZZbx3oCGb&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1FDkywuwJWelvFVkLBLCpVEK0STjiI75k&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1uSEzp0KCbekNs3WdBS_NxPes4V1CqXJg&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Av5Z0eN-jJ3MQLbGl5tGcf-65yKVCV5w&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1RyuPb68JCdrTvhLO-FpnO1GYnEkcQjoo&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1-6rapM2XkXxkTjTLenu-nUkRLiDVO2bp&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1MomgmgO1ic1_05kZC9GAthutKC3kjmA8&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1yJCCjfic14vWWZvhEc9zrtYlirzF-Reo&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1JLk_XDxkpLd84MdrNXJ4XZZsFZjpeTFG&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1EVPnjCgVR6W5jmT02HccP_YtJ1EX94wF&sz=w1200" alt="">
+  </div>
+</section>
+
+<section id="Barcelona" class="album-section">
+  <div class="album-title">BARCELONA</div>
+  <div class="album-gallery">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1DPM6yprLfuwx1IXO81iT0BRWExJMcXuT&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1oAiKQJ5glcKOJYi9LifPhptH-Xx8s0Cy&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1xnuyBHfFiAaVPfNhYVbfpqmojmQhjRkw&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=18VT_-p3qCRghL9DLdvtZmKjJLdgxfFfE&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1kUvJx05hWMYMdWscLVvird-kPzHN5f4T&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1uGkES2uYmOGH4yDOYkovUciGX1pQQO3Z&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1REsVC55OAN6U5_GTJnrU1zoCu8L3ml6L&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1n7TbJk5t2G64ZDB2bR07MpmPQV-bRlFn&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1dCvABlb66e_l_QNBQJict6BHuIW6GYHN&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1lUmlPgdHIBB8lEI4r1TNo087pel_yQNh&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1J1NfcaBfKBHVgpiM2osfYT5tNFMcEYvE&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1YokgNq0hNKUvHNiA-2t57KMgMHagBA0P&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1VEQ4Q1JI4LyBTQzw5qqj1AEsgkVBr_5Z&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1ECFlPIZaX5Wq537iVUrmSXh9WeMshxQN&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1_2SS38K1vdQ2vfXHiIVp84yrDp8iVkX-&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1H7RtbfBVCxaMKucog7X5MgUDMfy5MsdK&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1DO-MgjoB6tu7f3OpJ35ZXKDabPMsi9-V&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=149cegOKJ3TXqkgEfJBbPO1RIRBTWjSny&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1-9_6zz3EhHIQUH6D5TEOkhFb-Fkln6Y_&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1mjCr_YQFEYRMRbFfJvp0t4IXOAHnUelG&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1bFPsXTJHAJnEg03Ack8l5gjbopN_r9ZK&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1iFWBrsFcgMDwLHGZ7sZAmk3cTaF4WgDH&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1-aP9_EUY4xJJ8UbP6Vm8j0ERppAfr7Qt&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1ieU6mT4fE-OV7tQcCWMeHTmSV7Y8886Z&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1dIkB_bPJjOdyKemsoKxBeZRhMYezDZeN&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1xvOMzK0AZt3kZ80AO2TS_4yOmj8QmOp2&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1HbjPepCcqQZHZhOOWDgQlrnKUvSWn06J&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=12YZVMv4oIT3pOl5_03yXlLyvkT76w-Sz&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1epfwOA6tjFudkrBSmaq_Mb8VPPe_o_TB&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1dwlWBN7aupSC3oAIre5dYtbbV9jpgK2j&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1pgYgAG1mYv2GpkTrTHE2n44Z2_oMMpJ_&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1NteGY8LW8r8pFQsEnE66d254UDcS--7_&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1AV9fpl8Qte6gS9Zv0bbeGLX3Qqtvm55Q&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1mj-QnQYqzlYSuDfwTkqN4j9WchLu7wHy&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1G8Ua5tgT3A-aoVd635HdwGASc0N0EcZQ&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1mwBJJ3uhi1a3EukUDYGTnfX2-unjgOx1&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1ES5ZBC5WrLZsbVx_cQVeuRbC2nA3EUz5&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1ND77P7Et4Hc8rIoJ2bFU5Fo2mN70CV-2&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1goc--azqA6-wTnxiv6dhGiKg3BxetMah&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1YRRf16Ce_6ojtpa1acQOF2FqCOjIQnej&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=169Fm2zi_hxxE61KTNDNOgScQdQyzOA8a&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=17UH8itID3bh_5SEru9Cryvc685AMUWAy&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1vTlBjwcYIX51UA_TYwI7AvVzoCZLqknb&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1zw25JCZafvrkeo9BzO9LS8W3_SIfstKm&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1f1GEG3gujOaudwqG5p8zpMxT3omykp4X&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=18KMDX06_Y1zZWNBi1j9jqv7rfDLbRvoO&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1AV6JDafu2r8ZKCJdI1KijHvBhgMBtYBc&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=136oNn-njij6o4JlPTfAGCFepJ11quCXb&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1FG_AbxXw2l8UF5oBZc9okYC_hOE_vtb7&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1u2ckdV0BKTZAWKLdt1II8mPuUrlulxVB&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1gwUf9VxEbY7NxN4IpSk2Mk6jiJQm7VSv&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1Al2LlawrKQt3W22C6I5Ez3gbabmlsMVE&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1ndXVEoQVHQyLGCYtfj2PTZ9NjoA_SH-6&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1pQvXkvrrIqyPXp1pnHUkNeJBYx790Tsv&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1psFGRhwpftR6RI_RmrSsRzViSkUqun0w&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=18IWS-zCtkUSFPn1YdxuzDbUWtGpHBStK&sz=w1200" alt="">
+    <img loading="lazy" src="https://drive.google.com/thumbnail?id=1Lia_MuYt_rCvdxjMe4-_4Ux5lCDAtcex&sz=w1200" alt="">
+  </div>
+</section>
+    
+    <section id="example-3" class="album-section">
+      <div class="album-title">EXAMPLE 3</div>
+      <div class="album-gallery">
+        <img src="https://drive.google.com/thumbnail?id=10O93DMrzU7k4YN-N6NzIcUy2M8X-0c7N&sz=w2000" alt="">
+      </div>
+    </section>
+
+    <section id="Prague" class="album-section">
+  <div class="album-title">Prague</div>
+  <div class="album-gallery">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1ix3zySFaJXCH5NKp486NmMkbAvQwoHDY&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1qxDVotJ0_6_nqbTa_UUj1QUWCtQNZyEQ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1-a9maieAfvUsm1ORrI4YjK_F7aWja8zt&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1H_o0fWzjlzcogF6qf89EmYI6emTqlR9N&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1gjzC6sM_8XvgjwRFX1cRyGaad0Ruy1aW&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1OmL1zOQjiLAXszPyjJUsRIey1dRitVT2&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1h2BN9EtxzKhZat8uHj-aABkNh713F3Tw&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=11DLLnnjyTn77WBRhaod0L7gqhVABBUT3&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Sw9B7Of_QKWLEOgSXyfqX3u_FFeQaGi7&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1qUnBQiUVoBdCziddaXLqDc1QK20loMZX&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=14Tzr6ai7cQP6VytLQaNvMAfLj7G5Dv05&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1ondFtgLY3mJbwM6WBclF-xp92KAxX7AP&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1-W7OXwk0HRzVcXry7wssWx-KHNJqqAMq&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1yBFrark2n4T1r9dDwHlRCyGHNIp9KmmW&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1NDUGVqYvtIX4V3KpdfvXTj1_7fv1HDL1&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1LCqG8HM487ImvDDS347MHn1UATzTaB1y&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1GuGDMUe3jOK_O6BzZDsczP_PqqLGR46A&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1wDLu2uc0u6C_gcRQngqTXmmgfWO9Ez4k&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Fi4TtReSIfvWI38Jo63EPHCC15Loswix&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1P_2X7mGQErGEFu-Kxy3L1rRO1Jh9Fd-U&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=10886EKtEiObEU-cqDdHCc1dr-oNXXGPZ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=14VC5jqvd4ve8Dps1Ix7GiH1EXUH4jP9N&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=13YMGyjhT02rAbrTihR0hOCVVm2OPlO7b&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1K1xZHA8nnFk-q-w-_LM-wb9PsyyuYCXc&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1D5Hedh0-_8H6rvJwsqviHG5v1-V6kl52&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1QmyDcj6nk8yAYY0aIZrOwT7yKlSeUx1m&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1W8VbWKFMu7TR7SuR7BT-a9oIcdviUPnq&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1qEdjw0BfMCpXIUGssD7YReyreZhkL1MQ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1OCxBDp0F_omdsqSa9lL7pNqsIxr_F2nS&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1nK52-bn6mjY35sdZQz8zJ3tip41AUI8h&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1lDaSfOimtsj4J1HDp6tRi09PI1GLumNP&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=143UW0GJVr6BgD2KsnpMS-wisR7vAwJcl&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1O2t_A2Lca00qw1mi7wGRK5SFEmbMlceO&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1I21kVPwT20fAeZVm98ArUXHKvCK-ZRw5&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1dauE42qI1-wi7ViAxoXrH0tKnO8voZND&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1g4f40G8_1gNdx5L2LOkA9yDUU17rJmTR&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1NEzTKk23W2t9qflwliq8sJhAlLY_glXS&sz=w1200" alt="">
+  </div>
+</section>
+
+    <section id="rome" class="album-section">
+      <div class="album-title">ROME</div>
+      <div class="album-gallery">
+        <img loading="lazy" src="https://drive.google.com/thumbnail?id=1Oeyd663Y94idWLsIvLrwZQOWKvL6NbJP&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1yEgh60R9mf6SaD7e2vlcr-EKCGLUFdnb&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1JfIBonc5Nh4RZsgmCpcRM1fUJuHMLAeC&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=12ryeYmjd3SCemQ0CqTOUYkRjYtznfykr&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1dWeA7VjG1TgMt4Nb6s_CqAfhtWLy8VUn&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1ZqFTO_OzkRxFbtx-7AgduF15WhxiHIT5&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1zf6zG-XA91uNXjJI8Wq5zD4VxfH7mFWY&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1QLuO0D1oC1yLdaeJoi9XJd5J9eOXFzcO&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1ll_6S0X2fIrXMGjHAXv8-1R4KQ5DrHK8&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1sDQqYuc9acCH2oSgPtxTQmex3mhVpHXV&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1E4kKxSf36XtUiLRG2Q9P159U1EVhQY9A&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1zDTbdT0e8XRnEww9LACOdxhkrV4bBtD5&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Ya9UxFGb62O__3WCs0pnhRfHn7i5WufI&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1IQsGIzI_YmrWMGsSMeRNdH-0bkUj3vXI&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1H2E6tt5-nysb8bITF5z1sdL1RPGv7KZ1&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1r_e3Jt75Bga5upucRWolXO1cK1wDmm_0&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1yi9V1rojy0PGNGn1XzHFoYjCBO_igTK7&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1hV7pIgJS1G5-HKTC_ZpVuigtuFn8_e8j&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1bfR8-S2PUjpDERaMsei_PdkVMzTEzkBF&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1OI0R3XPB5fH9vLcB-Gp4Q5hkIDW_zEI-&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1GqX-gHSEgFSkWi25xuqN88TSxBchiXBs&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1UlJeeukchxHPw65mlKS015Yzvwpiqc_T&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1hfr6nlZv_0Zv3qYrgrIvYbBcmBnonqfB&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1p8oJ7ik8UETVJ7ujM5xllF92zU6brVUj&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1TuXUUFL7vIMeu9Pbtq6S32_M4n2KflHF&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1AhTUD73GBFgLU-4fj4oWg9HAl6Lnm_j-&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1KRP-qJ3hTva8HnQCgFrwZHSn1wEVYNie&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1D9r4tV9Cy98peWUcGdkcAUwo0lGTSuro&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1xva041lwBVjLkvFpcMyQ2qH8DcnSjzlj&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1WTKPcxQshcp6E030J--oH843kXkSfFz9&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=16dXTf1wSRlwSsQkN8778ERPw6PFDV9uV&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1su0optDaNVwn1kNCP_rXeLUGl7tRegEG&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1gmOFZW5TeqVyYPWlw7LxQds-ftRIdeM7&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1xdkB3A_Bw6La3h4Is12aW65KO17ADDhU&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=19vA9WyucYD7GZQDUmuA6ApX4fwOD1PXI&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1GjauqUX_ipzvOSolFukPKdjMBTQvPQVi&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1IxDXZiEfCzsMX-IaBmSw2vre0-ZgBwFq&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1RagO40d1ovVPM8Y2_HMzkeMPeGc6YCcZ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1gvORfq9e_z6p9ntjzZlHleRc9E_5Si02&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1pBfumBj51xBgZ5EoSfFljPH83jIkV79H&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1gfdAQH7LnCWuwbO2gRYMq5QI_33uNgRb&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1855reqDEXQu--W4ibidHkAsiypPbVjFt&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1UOmTSroz1kKGJlMQVe0ZBnWqjGH7Pirt&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1RaWh7dV1xJWRO_DIAgssULGI-3xpIQDC&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=14oLuUywIg8NjL-Y3rjTIzCdPEpRv8_DH&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1CNj9ZKx2S7Vf6tO8tb7IOcCqbx-HtK35&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1YdzByGC0B8BsnV4K-oX7lJxiObM-ts6q&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=17Bo4z8ZcEBAdygqtWkpTmCawaW-VLF0l&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1KnrdtojZKrQkOU3gvVU-L28YButIrR9o&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1bQeYEOhYzNifvN-BrzlsBovW7iakg_vZ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1xssfAZ-t9SmfOdKEwNisDBnAnw6dkR-J&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1goMuehbOiD19Q0ckCD3ZAcpPqyukL0z_&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1wV4s3T3iR3KKQO9-L3mrUnOFJb0lW4T8&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1P_TRZD19Fdwzb4Su_u3xWaTtBTbV53eK&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1BsSS3V3jgIh3l_I0iC2FlYAEJRAFzUU8&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1arcMkQGWB3jgCYUEBqGufbpuOY8dzuqm&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1gcuQSWlDIWgAbP-abZiiVpeG2GqVyKqD&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1qws20s9yROF-S_tK-pj13Uv8NsZzOGLb&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1qT7u1_f61x4GrZLuN2NKZ2l8wHYFfIwj&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1hTkS8_zXPRl7bY0NkHSBQ47ZP0NKoc-S&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1jgBQ6ByCb1kj_w7rnj4SKzv2ljbkcnca&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1-F5obzu1mCBqu_dlOgzG05_PuuWpuVVQ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1-M0YckAdSNOqnvuzQPSltzDy4Um6_o-t&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1C8Q9hCjlWeIPM6iDorp-xYPMLu6sIymf&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1kkcX7vxHsE_nzrWLjSRWRr3SB_gHvUcf&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1hvnEgj4JD2FPtIAkDjjQ2PR_xF0_8NfS&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1d06uWv56p8L9F9f7P6u2XRFFiQAudR8e&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1MyWSyZSep1csMiD_WixyLwEyiYlXWHNf&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1cdmpnk8GDXCYmc-0HJ6hNBRarNYH9B0l&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1-YA1olw4u_5q9kKl7z9PFb06JpLagLen&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1vsQ-1jKnnpU__PKm4AG4sEFLfARd_wU1&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=19Yj08HhKDloi0u9ctJlg606GieHwKagP&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1oVWgNDarRNT0KdgLAo5nfOb4N9neprAh&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Q2EirCRu_Fht_CUnSogn8KxE_spprxCJ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1kckSGWmeTfGpEN_3DjztsjVLDRrKsniw&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=198aZF04tACDViUlkOmyW7HxPoKT5LDTB&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1TzuPkNUKqEz73RCCHoPA7WMBFRqxwbpj&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Cq1bv2wCK3hsB_Z_qBgdpvjCTUJB3I3P&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1ESRfvfO5K5ZCLFq0G54_Z4aJZ3EIkpyJ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1GtXamwINxQzImFcoe-b-Ik48jr_Vk4HH&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1yPqYn625QCJi44xNIHzR3smE7iyIcNnD&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1NXpLou1OiRLuTRDA8VjvUEdjK7JgrFtN&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=13zjXk9r6bI8d1FZazrzLXJsequ1LG8vw&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1jLuSeGtNwXw1JkFuNdSNxPi2s1Mw8ylO&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=100nNyEp8r1uijC2P_zW9QkhtnL96Rmix&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1oVW1cdHqPLaBVEGiZkeOd07WPTZXUT10&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=11NuxuXmkh3g6aNJaO1wwIo1zXdi_e5k2&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1QCckrS9no0_91uzTV8mjv9E__noY_aYx&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1DuE1SjHJvqZpSHa7Bo-kAuQn59hmr0A9&sz=w1200" alt="">
+      </div>
+    </section>
+
+       <section id="usa1" class="album-section">
+  <div class="album-title">USA 18</div>
+  <div class="album-gallery">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1s_4QuNrPffjqPFlfonNDxwp51nEf9ucO&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1_6WNTR7pswE6EmY1ktCF_AP8ZimaCkrh&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1j9TkSJ-xmbgo2jFN4TIBAhNMSy1vHvr2&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=108nflJgjuWtUlfovI_4LDLRElhEGu15R&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1mQUWMswFydEgLvrntlRFejYe_I4_Sbzw&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1hS3g8_qaN8e0LOjEYYn8VtvpKLDzZpdd&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1KZBXS-mP6c-821xvC2Ft_nxUaN-BW-5T&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1jv92VS_ZJ1fGNaBV3d8GmZpW8j3CPzns&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1xsMAsclkZIpNYNX4i7cKGxduuz_HpTgA&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1XqlSBJldUnj0-MWyXz9r2PayeKLi7y1g&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1LNw2CQdxY69jlsmlfj5_D8C8-Y2RMuZ5&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1yjdkCkNU8WGxRJcsRjEfb6DFCO_PmY5s&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1dK7_5fAFv0rYNAgSwfXvf_b-W_dEJxax&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1ptNb2Bt5N_t7OVzbPQpWMdBs_FKCWZP9&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1FY2qd4ZEuvM5NPfvnIfdeEtg7Mz3EszL&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1NX5Jf36oDqY_JEGf0eAnoZZTwBNIapMD&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Zcmo_VIU6YNKIu5GhWHlvb7KJ6clBQr8&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1vlCWXdY6nyYhgfnVC1zNxLwavYlwahvS&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1y28K89iwmzCe03xzH0qpn8LK0lE1Nwvq&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1d_CDWbVVmHhIQyAIURUvvjqDfgE-DQDV&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=12K1pvSoyALRefiCisIp2RhptiqsRuqES&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1vtGF5HxHvP8pE5nQt4UXSWhNlNeJkCFr&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=11lat4hsknNuYWQUy2zx9RhoUiia79E9P&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1e2fVmKHuwSnV6VqaXdbRAp2sQ19xKW_k&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1q1HvQDydaQZghqHFOjWzMCFbKA79D_iw&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1wOCYIBzryWtd7_kMg6QLYaFmT5T3wzoq&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1fwSVwp_-K-njYTnnVsdBi5rjg4YmvgJT&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1WXGd2rSCNAvJgiUUwU7y_dUQQjljmlj1&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1mMeQ3QuSTEkHEFOdImMBOOzj588Shrd-&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1uswFD3c-EQRdG1qscp2SM59sUvOciI_Y&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=11rviZ4cxFHIocSq2YQidlQ3MovRaA4yw&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1aroaOfa7mf1BLgUNeqpmVY0C95K_caCq&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1EKkyYT1sXRd10wKpGQ2UpIbOzWQ5uihL&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1n3Oi60THKNCxS5h_uxxSZTWUYPx7AOeM&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1-vlzFOcJQBa6tePsUh_S_OnkJ8eYvBhd&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1CYFdS_LXza2T6N11g9T8RbwP8Cbm4U3y&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1oHEoDG6Dsc77Go3-uJTnTZqOs2jSJTq-&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1bkCcZgPQSjND05nswD3Mr0OkGe7_6auT&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1f_LAWKxpldWm3lUd00X1wmn-tkQ2fnxm&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1N1e30_MhABLC9-7UQ_0H4XW3g_fJWTzI&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1D0GqyTQyiIa07uKysskQG-SX5l-oWT0L&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1--0JZTARujVkaiPNw1vO3iOoyvKK69E_&sz=w1200" alt="">
+  </div>
+</section>
+
+      <section id="usa2" class="album-section">
+      <div class="album-title">USA 19</div>
+      <div class="album-gallery">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1XdDftXvDDP50mysgKI1MlJbl1m8qADFD&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1CyjwDVak5LUdLJir17zamPZutjrwGKqI&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1gpw16uQLq9EXOnLHTGoAZgpKLSAkBYjK&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Pdf3LOcKE3PDrNESOVLy5HG6ReHTHb2s&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1EU66NYOB0_Sl7lz3YG_-ZCACex7bjy0S&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1_vY88VHynQglIblGQ1qKnZ95OrLYbxOo&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1wpvI7uxMgzoQ8Et4oZO_QZhX2QBRwXNr&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1nkOgLP_OMeRv1isqrvIr2HCgOvhG6n1z&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1J5Sfb7lP781t5JiaPlKQAjLRDgNSsOIV&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1oNt1smef-TyaZ47NL7df_fn3UcMP_0ve&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1R-xpRhWoFyEx8nnUm9TH7xSriijB8KI1&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Lb_TYPlz1vpdh3NUCFIRAaPlbsL6xr1B&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1HbGvyXbgN_zAZRCuLN0D9wOrXZVSdxST&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1goTsQNzbYaSccQuBToBBStogWdu6CKm5&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=19mUGz-XjA_iB0p2NnWowUwjXk5zCuFud&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1EL8QCyvmiGhIUMvbEHi2nCoNSya2p_F2&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1M5lzsHPGymsfBBuNEJp1-VpOzUdy2SZH&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1nGj4Y9oD2Djgit1PICXAkp42me6jl8l5&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1U_DNOHWb_zYz05MH-pyc9ftZSaCV2mTr&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1x7lDw86j712GVkGagEvlLlb0nDnzLtFk&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1hiJrdcWQClgJug3_EbAOpi_p5rjdofN9&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1q-PiyzCreRfQkLqjIXMjlN3Q7Z1s4UDy&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1yN0gXHSMRRGHbNzAGP0EWp14PaT5TZJG&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1dNVxSEi77x52cd-OrqXyn6pqPRqxyGQG&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1oJ7h3vgFx5U2bAbbys7hMXCUZf7TOwH1&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1R47z3syT-N2I3tY13U45bnNiZkyBvodn&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1yP27xOFgxtFDThGflnQ4RNdgOovL5dpT&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1T9Uoylrx6Zvg4g6E3JxT-80NsQNfVmBT&sz=w1200" alt="">
+      </div>
+    </section>
+
+     <section id="usa3" class="album-section">
+      <div class="album-title">USA 22</div>
+      <div class="album-gallery">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1fHUlD_8cTzLXKj7idAMzI7PsiXXO8pxb&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=11nU9BXyWRpKMMxj1Kwq5bY2tQ_G3Ut1T&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=10yWbMUg4TBKCgJbjOQuoCgE7iORjzvVs&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1y0sfz5Rj3tNeVrQVpdWYdXE3S7G8pF7w&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1tdmwNchrPyLCrg8SNGnodIcd92riAGSz&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1flQveMsIbi2JBF8wOiS9PBvNwU_my2WL&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=18SUwgaZmWW9bRs8fkl5IyvavhRnkbhpn&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1FrxWN-WOMbIuDyVVipltw0DY-NaEWo3E&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1V9RZiLT1QXCIUaUIGB_X6rZnGXfv_q2u&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1KFjDI337pMWArVY5ddUMKSCHEM4jXGeu&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1icrR8jufXxCmcEwDyvYCiV8mZKMQPwt9&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1WMLBlSl3i8LKIy9QGcT4JCKzKmC3I6b8&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1sonsNiuAI1YkgaE0rkRUd5tCrcffKBQv&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1HAMt8RAg2_JOundEaGiJrNtkCnboBIAy&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1hL9gcajnRGpnEc8Tk6nh8RMKL46bTCWK&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1pTHyjtyOc0vGe0YBkVLAXk-MoLgljgEV&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1DAsvJsGTEJysxT0hcHgIXcK4FQ1Z5fNG&sz=w1200" alt="">
+      </div>
+    </section>
+
+        <section id="flora" class="album-section">
+      <div class="album-title">FLORA</div>
+      <div class="album-gallery">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1PUY0IVuEqBoxabmf6AMdGLlaK-QaBw_M&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1K79RYDe8nCD3BwpDwZxNFWPGQFs3iwAi&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1wDUQVQeaENGkkV8h1jmyFrC0Wh3YiCl4&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1D_eirP6fFEy25ynfi3-lkB4004Cv5znh&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=11dV1oKAVmeBaO9GCppBF29zvpH6uDIsM&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1v8rYzXFaR8XTB6JdBQGM5BXKog73t_eV&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1BULikRzeHhPX9f1liHR1jDIIUwp5k3Ed&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Vf2ltSFpFN0rJEpJjQLDlOSbge5_vJQp&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1RxXPWV-3_cWBJXeo20rJFwoud6WGadU-&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Pw1GgFrNonij9rOi7INXVpv-ngkwO2ET&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1TZeAqvMliFYRwPYsaYuZQJcwkV1aEgyd&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1E_Y7IcOkcBo_MnoQZvItjye8UYxI9Ovw&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1S3CO0RBkihi2TqLK4q69DtqAOEq61Zqf&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1vjbjCeDNkhpbZLWJrxxvmiAmA42OqQM-&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1oUj0zDbyyQ-7OzCFVXN5488NPr_Gq8fb&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1LNjSHXqyBGpCmc8842B4C2NWR3pzjFVv&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1M8JUXuhhDOJULFHTREqjZhUC7dRcGOFj&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1G1UoTC7BYMZ5MbPPog-NaX-cq0lwkAhC&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1brUNgIw4Pd1H-RzY8meyPCP3xq-baFoT&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1uJDXLtPrGWnGby-DB_HO5-h5sTnk7OAA&sz=w1200" alt="">
+      </div>
+    </section>
+
+            <section id="wildlife" class="album-section">
+      <div class="album-title">WILDLIFE</div>
+      <div class="album-gallery">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1UVn5xvevb7FfgvOBA5xaY1B3p5Qm3KMb&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1HG2duEiQl54OBN8fQH19d6YIbj2ULs-d&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1nMsHerfN7yJGrl2vM9zdN8MrcTtu3T-l&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1hcNb6LxaEA5YISSzZTUlYdsX75M17mic&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1YGW0BAjrtivC3ovsxtGGO2gRTxyh9I6s&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1O-xMzC9E3XjxLpImnRteS0lFDH6PylQd&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1VQqLZ0KjuTWOYOQ0_HonI-WMmkNM8itP&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1wNRqkJbzi8oHAaPvXFHPjc0h-61L-6rV&sz=w1200" alt="">
+      </div>
+    </section>
+
+                <section id="landscapes" class="album-section">
+      <div class="album-title">LANDSCAPES</div>
+      <div class="album-gallery">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1TI5UM9retr91--zjvxiDR_yW8ofkIW78&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1uFZZbCSKxyPjs1V9WDPf0rwwXAtYKR9k&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1JbusrV4Ymv9cfZACqPRXjejfAAfxl2za&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1fm1F__Mm1mnGruLMncqvE5ZRtrtiXNKC&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=15iaBNl2LnkIyqYsToT8zjx-ZDvms_kli&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1kXEWq-_ALQfbmTZh9EeesXiZxeLEpL8k&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1igV0atm9zm_fyhhUNe0i8TH4RmqTRd2U&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=13q4y5i2bq-kcvdxKzAckK-Po7Ozui7LG&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1IuHJAy9frDM30kJwVLQx_EQUn-ysEThK&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Z5k-Ep-0ra5cdfkKmoqwEnMe0Ud8xZ3G&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Aq_MZ4dkKGEfSpOp4ppS-A9SMpMFnXSB&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1bM0Z3WOcnjeQXCbglZaZZUhq911M1Jpd&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=16Iy9fz6le3psiyko0HJkd_Pb_C5KE3G7&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=11Tq0jZObrrfzWjXDDT8NSlAeb9dv17Eg&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=11YSBc6jWovdHKxB8CU7KiJnoTooUSWw3&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1GzPW1MUeFerH6L_1dAwv49SMVuxV1Zw6&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=18L8a_h79B3WKSqKVi6rz0MGMlEYxgBMw&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=130Ch9XwmjsogkKzgIJZc0BTCsKbQoSQS&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Zw02_SQdX00DqdqWFLn8eIkFrHiJQZ_B&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1VMaPGGzCGkqTWoFEMgZT-_38Wgu8Z1pV&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1ZU4duCpteporBV8X8B3R70wL9vXTmCox&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Z2EMM5XsqdzTTOgbYo06IoMXy2F9fuQg&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Ds2nDfWWJ95n184CdTD-Vd8m_BXsy-re&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1U2NND1ErfvH6pX3C2w4shLTMXn0pI-eb&sz=w1200" alt="">
+      </div>
+    </section>
+
+                <section id="urbanlife" class="album-section">
+      <div class="album-title">URBAN LIFE</div>
+      <div class="album-gallery">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1-nyJg7BnPLGWIcT6JHh55QJF837nuehl&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=19KkUvMtqum2H49TqxPRIKYbiIscpF6XT&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1XKwTHQu4u20YBDn6NvBq7gm4Mn3vSpD-&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1GDtrm3YdobZN4KmPfGHUnOVORXr-m6rM&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1T-hsVeVSwmeX6ImZC-BF_XrV9irnaA2R&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1YQEkynmY7AKg3I_p_nZ0u7fEhDjcmwmW&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1L2I3o6cPdVUxz1-_EvedR_UTf-t63JnU&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1iUxwbAUzmF8FwILScdm1xODu8BN9ZeO9&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1z_UvLZkwm4Uq6dveL8rSvxYfFBHbZUw6&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1vsID2l24pEHjElWeMKbpGRNwVxTMr0_V&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1JeH_QNHzPktv4_ldbFKIs0TcVFAgF4s3&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Kc0iGBg-OH5leyK-Aq_2PNjcoDONNoA2&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1T5xwjw_DhJ9JQqxGSvI6m2tNLHsxNRtb&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1kRTpk2B7zP6dSjKjCaRpyqMBb40xyIt4&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1l1rm4VJuk8qYXvurV767X4xWx2Hg1Cu2&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1GShrn5Hc8-H61mZJmgn6PbOUJOCLkmek&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1pvtzvL0nd9rU4pQY0x4cAWZSAPXi7Diz&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Z33ceTUzwcTFXsJVDtMDtYnKiBxBQ1qA&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1temK6xxBJj9LhpkrNdypueCw8Jfbogxo&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1sWdLLwKld9_9klveYZTLko70SVLRKK6a&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1-szE0h3Tmu-sJpL1mJ2r5jhgnahpo99H&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1mwdnimX6CEN9Xi3hFrgJxYXfvGJVxNSF&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1BH-uJXGA2kl8TiMLqKL6DfAt8Y8nwyEJ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1XabHqVKEyJhJwhRDR8G-7vd_qv_6wC3I&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1goaOlaXLlAQwB-vz6SaZwMHTcGD7I9yD&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1uaPCk_dZL3k66vhk2Tf9FGvfrMzbqSyS&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1cUkh7fbjwm3lXPQPG_Q2qHD3dqm2xBJD&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1h2BfDgMVVS2LiC2p98tl9xYKHV4EScSz&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1_DZvUV6VO4cF954K6QHJ2GYaVT-nhFd9&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1ngggxYBABPzc_0ze6iZJ8fewtiIePVB-&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=10fXqtme0SeuPSZkR1a-MbkmsmXouKUFC&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1T7MEHch9SJ47Iz6YKf72WOdYhiCsoaNw&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1fOIim8sZKOi2a7t_Zr3LamcTucV0sM6I&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1R90wS3-v6pulcsaLqN0qpLJL5D6FJfnw&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=18XsinHqtNuLbmqXDDNVAf_4HYnU9QiLJ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1lOx9KcwTfPGBLDX1dFqkhv0ZbOgo52fb&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=14IX0aNOlHF3PES86I95nIsShB5gpZjRL&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=19-9X5zMqF0dNTVJCj4B-FeKH6fX0GeaC&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1_ACaaZwRXwqxqVVtRtcfGZcPY7-lYgYz&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1sW2YLkp227sSPusWUACrNFUhBrVpngSm&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1Ec4qhMa5OpXBo0ikZxUmhh57LVOmswKA&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1kct_yAKmfVHaX78XP3AkeIw9U74bx7hz&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1qzSKmNd8IOibCbNMNdAO92_ZIQjFnivY&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1WFGE0uQmIufiph8RKblBhQd2j4NaTBfU&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1VS9AmC4XTEUWxY1ql_792PKovwtSfFb1&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1EG9WG9zcpKWzi3ax8lW3567K1YtnkYRT&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1HH9-fFplZIjA7Puwum85p2V8RGYt50Fs&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1w6QLo6kfMN7-ImHOYiyBhH4nYcQZhOvE&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1plvskE21U7OJnRvGT-G5WWdUGqXKP7a1&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1ziWdPXkUj6LcBbnbk1ikTdMrZZSAnCm0&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1TLRabtj-Yy_WQeJJ4gwzB-ddUyHnRZ87&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1OJQZolnThNKIm0baX3M1sB9u3ZtWURXw&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1JMtHaMJ7-UwxqpIsmI4lqbFKjR6COy2L&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1CO1n1jmvZGCXhw8t9uTvDaQ499-sw_pA&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1uXKBnPMrtexXkQyrqE8CdKmCNl59ipgp&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1WVL64JaG955gDhDQ0mkZK0zcSF2oB3vk&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1GJsvyAG3UcpcuojcIhcl47WRMZbB9USK&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=10EHAS5sepgsHrus-aWFkwnaWjLJ7jbSJ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1BiWe4KFZqZSt1v5hM1pUh37Ma1f-7XYX&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1lJuEucqScMRP5BnxRqG0mUyV5HN_5CkL&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1QBc63WzoR3UCfxKCS2ZP-kC5VApoZyAU&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1qOhSFUzJDlcGGgXnstV3cUN-rzotLuD5&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1XyzfH5NlWATrPZ-kKomj_G0nFnQhPL-E&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1hny9w4AhyjoWni1IcRzMlc9sJzwjK-jQ&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1J2vV82s6VeIZPX7HYxEyEYjF24XFBFjP&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1MAouNLON84GafqZwZIgq_TZlrOT5Q2TG&sz=w1200" alt="">
+<img loading="lazy" src="https://drive.google.com/thumbnail?id=1xlX3FqSf-bZzVyRIPvE_LEACMx14f1Zc&sz=w1200" alt="">
+      </div>
+    </section>
+
+    <section id="about-site" class="album-section">
+      <div class="album-title">ABOUT</div>
+      <div style="max-width: 700px; margin: 0 auto; line-height: 1.8; font-size: 16px;">
+        A minimalist photography portfolio with album-based navigation and a clean white layout.
+      </div>
+    </section>
   </div>
 
-  <footer>© Eyal Ezra 2026</footer>
+  <footer>
+    © Eyal Ezra 2026
+  </footer>
 
-  <script src="js/main.js"></script>
+<div id="lightbox" style="
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:white;
+display:none;
+align-items:center;
+justify-content:center;
+z-index:9999;
+">
+
+<div id="lightbox-prev" style="
+position:absolute;
+left:30px;
+top:50%;
+transform:translateY(-50%);
+font-size:60px;
+color:inherit;
+cursor:pointer;
+user-select:none;
+">‹</div>
+
+<img id="lightbox-img" style="
+max-width:95%;
+max-height:95%;
+object-fit:contain;
+">
+
+<div id="lightbox-next" style="
+position:absolute;
+right:30px;
+top:50%;
+transform:translateY(-50%);
+font-size:60px;
+color:inherit;
+cursor:pointer;
+user-select:none;
+">›</div>
+
+<div id="lightbox-close" style="
+position:absolute;
+top:30px;
+right:40px;
+font-size:40px;
+color:black;
+cursor:pointer;
+font-family:sans-serif;
+">×</div>
+
+</div>
+  
+  <script>
+    const heroImages = [
+      "https://drive.google.com/thumbnail?id=1hF8H9V4YFJirXso8m4UTLt4bhxCowWsA&sz=w2000",
+      "https://drive.google.com/thumbnail?id=1-6rapM2XkXxkTjTLenu-nUkRLiDVO2bp&sz=w2000",
+"https://drive.google.com/thumbnail?id=1mrm9foOFnMq5X6raPO41WJ7EQYvz3Kju&sz=w2000",
+"https://drive.google.com/thumbnail?id=1CPJMEp3We_KpCTeCs4CbbDKoxlIxg_SH&sz=w2000"
+    ];
+
+    let heroIndex = 0;
+    const heroImageEl = document.getElementById("hero-image");
+    heroImageEl.src = heroImages[0];
+
+    setInterval(() => {
+      heroIndex = (heroIndex + 1) % heroImages.length;
+      heroImageEl.src = heroImages[heroIndex];
+    }, 7000);
+
+    function hideAllSubmenus() {
+      document.querySelectorAll(".submenu").forEach(menu => {
+        menu.classList.remove("active");
+      });
+    }
+
+    function hideAllSections() {
+      document.querySelectorAll(".home-section, .album-section").forEach(section => {
+        section.classList.remove("active");
+      });
+    }
+
+    function toggleSubmenu(menuId) {
+      const menu = document.getElementById(menuId);
+      const isOpen = menu.classList.contains("active");
+
+      hideAllSubmenus();
+
+      if (!isOpen) {
+        menu.classList.add("active");
+      }
+    }
+
+    function showHome() {
+  hideAllSubmenus();
+  hideAllSections();
+  closeMobileMenu();
+  document.getElementById("home").classList.add("active");
+}
+    
+   function showAlbum(albumId) {
+  hideAllSubmenus();
+  hideAllSections();
+  closeMobileMenu();
+  document.getElementById(albumId).classList.add("active");
+}
+
+    function toggleMobileMenu() {
+  const menu = document.getElementById("mobile-menu");
+  menu.classList.toggle("active");
+}
+
+function closeMobileMenu() {
+  const menu = document.getElementById("mobile-menu");
+  menu.classList.remove("active");
+
+  document.querySelectorAll(".mobile-submenu").forEach(submenu => {
+    submenu.classList.remove("active");
+  });
+}
+
+function toggleMobileSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  const isOpen = section.classList.contains("active");
+
+  document.querySelectorAll(".mobile-submenu").forEach(submenu => {
+    submenu.classList.remove("active");
+  });
+
+  if (!isOpen) {
+    section.classList.add("active");
+  }
+}
+
+ // חסימת קליק ימני על תמונות
+document.addEventListener("contextmenu", function(e){
+  if(e.target.tagName === "IMG"){
+    e.preventDefault();
+  }
+});
+
+let currentAlbumImages = [];
+let currentIndex = 0;
+
+document.querySelectorAll(".album-gallery img").forEach(img => {
+
+  img.addEventListener("click", function(){
+
+    const gallery = img.closest(".album-gallery");
+    currentAlbumImages = Array.from(gallery.querySelectorAll("img"));
+
+    currentIndex = currentAlbumImages.indexOf(img);
+
+    openLightbox(currentAlbumImages[currentIndex].src);
+
+  });
+
+});
+
+function openLightbox(src){
+
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  lightbox.style.display = "flex";
+  lightboxImg.src = src;
+
+}
+
+function closeLightbox(){
+  document.getElementById("lightbox").style.display = "none";
+}
+
+// סגירה בלחיצה על הרקע
+document.getElementById("lightbox").onclick = function(e){
+  if(e.target.id === "lightbox"){
+    closeLightbox();
+  }
+};
+
+// חצים במקלדת
+document.addEventListener("keydown", function(e){
+
+  if(document.getElementById("lightbox").style.display !== "flex") return;
+
+  if(e.key === "ArrowRight"){
+    nextImage();
+  }
+
+  if(e.key === "ArrowLeft"){
+    prevImage();
+  }
+
+  if(e.key === "Escape"){
+    closeLightbox();
+  }
+
+});
+
+function nextImage(){
+
+  currentIndex = (currentIndex + 1) % currentAlbumImages.length;
+  document.getElementById("lightbox-img").src = currentAlbumImages[currentIndex].src;
+
+}
+
+function prevImage(){
+
+  currentIndex = (currentIndex - 1 + currentAlbumImages.length) % currentAlbumImages.length;
+  document.getElementById("lightbox-img").src = currentAlbumImages[currentIndex].src;
+
+}
+
+// Swipe במסך מגע
+let touchStartX = 0;
+let touchEndX = 0;
+
+const lightboxElement = document.getElementById("lightbox");
+
+lightboxElement.addEventListener("touchstart", function(e){
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+lightboxElement.addEventListener("touchend", function(e){
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe(){
+
+  if(Math.abs(touchEndX - touchStartX) < 50) return;
+
+  if(touchEndX < touchStartX){
+    nextImage();
+  }
+
+  if(touchEndX > touchStartX){
+    prevImage();
+  }
+
+}
+
+document.getElementById("lightbox-next").onclick = function(e){
+  e.stopPropagation();
+  nextImage();
+};
+
+document.getElementById("lightbox-prev").onclick = function(e){
+  e.stopPropagation();
+  prevImage();
+};
+
+document.getElementById("lightbox-close").onclick = function(e){
+  e.stopPropagation();
+  closeLightbox();
+};
+
+
+document.getElementById("lightbox-img").onclick = function(e){
+  e.stopPropagation();
+};
+
+
+// זיהוי תמונות אנכיות / אופקיות
+
+document.querySelectorAll(".album-gallery img").forEach(img => {
+
+  function classify() {
+
+    const w = img.naturalWidth;
+    const h = img.naturalHeight;
+
+    if (w > h) {
+      img.classList.add("landscape");
+    } 
+    else if (Math.abs(w - h) < 80) {
+      img.classList.add("square");
+    }
+
+  }
+
+  if (img.complete) {
+    classify();
+  } else {
+    img.onload = classify;
+  }
+
+});
+
+</script>
 </body>
 </html>
