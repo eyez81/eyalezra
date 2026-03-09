@@ -1203,21 +1203,38 @@ font-family:sans-serif;
 </div>
   
   <script>
-    const heroImages = [
-      "https://drive.google.com/thumbnail?id=1hF8H9V4YFJirXso8m4UTLt4bhxCowWsA&sz=w2000",
-      "https://drive.google.com/thumbnail?id=1-6rapM2XkXxkTjTLenu-nUkRLiDVO2bp&sz=w2000",
-"https://drive.google.com/thumbnail?id=1mrm9foOFnMq5X6raPO41WJ7EQYvz3Kju&sz=w2000",
-"https://drive.google.com/thumbnail?id=1CPJMEp3We_KpCTeCs4CbbDKoxlIxg_SH&sz=w2000"
-    ];
+function getAllHeroImages() {
+  return Array.from(document.querySelectorAll(".album-gallery img"))
+    .map(img => img.src)
+    .filter(src => src && src.trim() !== "");
+}
 
-    let heroIndex = 0;
-    const heroImageEl = document.getElementById("hero-image");
-    heroImageEl.src = heroImages[0];
+function getRandomImage(images, current = "") {
+  if (!images.length) return "";
+  if (images.length === 1) return images[0];
 
-    setInterval(() => {
-      heroIndex = (heroIndex + 1) % heroImages.length;
-      heroImageEl.src = heroImages[heroIndex];
-    }, 7000);
+  let next = current;
+  while (next === current) {
+    next = images[Math.floor(Math.random() * images.length)];
+  }
+  return next;
+}
+
+const heroImageEl = document.getElementById("hero-image");
+
+window.addEventListener("load", () => {
+
+  const heroImages = getAllHeroImages();
+
+  let currentHero = getRandomImage(heroImages);
+  heroImageEl.src = currentHero;
+
+  setInterval(() => {
+    currentHero = getRandomImage(heroImages, currentHero);
+    heroImageEl.src = currentHero;
+  }, 4000);
+
+});
 
     function hideAllSubmenus() {
       document.querySelectorAll(".submenu").forEach(menu => {
