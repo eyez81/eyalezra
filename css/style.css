@@ -39,7 +39,12 @@ body {
 }
 
 .submenu {
+  display: none;
   margin-bottom: 32px;
+}
+
+.submenu.active {
+  display: block;
 }
 
 .submenu a {
@@ -212,10 +217,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .site-title {
-    display: none !important;
-  }
-
+  .site-title,
   .main-nav,
   .submenu {
     display: none !important;
