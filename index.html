@@ -327,6 +327,42 @@ footer a:hover {
 
 }
 
+#backToTop {
+  position: fixed;
+  right: 28px;
+  bottom: 24px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(34, 34, 34, 0.72);
+  background: transparent;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease, color 0.35s ease;
+  z-index: 2000;
+  user-select: none;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#backToTop:hover {
+  color: rgba(34, 34, 34, 1);
+}
+
+@media (max-width: 768px) {
+  #backToTop {
+    right: 18px;
+    bottom: 18px;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+  }
+}
+  
 </style>
 </head>
 <body>
@@ -1464,6 +1500,30 @@ document.querySelectorAll(".album-gallery img").forEach(img => {
 
 });
 
+const backToTopBtn = document.getElementById("backToTop");
+
+if (backToTopBtn) {
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 500) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+  });
+
+  backToTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+
+}
+    
 </script>
+
+<div id="backToTop">Back to top</div>
+  
 </body>
 </html>
