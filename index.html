@@ -327,31 +327,6 @@ footer a:hover {
 
 }
 
-#backToTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(0,0,0,0.55);
-  color: white;
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 1000;
-}
-
-#backToTop.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-  
 </style>
 </head>
 <body>
@@ -1183,8 +1158,6 @@ These photographs are not only about landscapes or trails. They are about the mo
 © Eyal Ezra 2026 | <a href="mailto:eyal1ezra@gmail.com">eyal1ezra@gmail.com</a>
   </footer>
 
-<div id="backToTop">↑</div>
-
 <div id="lightbox" style="
 position:fixed;
 top:0;
@@ -1489,21 +1462,6 @@ document.querySelectorAll(".album-gallery img").forEach(img => {
     img.onload = classify;
   }
 
-const backToTop = document.getElementById("backToTop");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 600) {
-    backToTop.classList.add("show");
-  } else {
-    backToTop.classList.remove("show");
-  }
-});
-
-backToTop.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
 });
 
 </script>
