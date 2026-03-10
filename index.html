@@ -1194,6 +1194,8 @@ These photographs are not only about landscapes or trails. They are about the mo
 © Eyal Ezra 2026 | <a href="mailto:eyal1ezra@gmail.com">eyal1ezra@gmail.com</a>
   </footer>
 
+<div id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back to top</div>
+
 <div id="lightbox" style="
 position:fixed;
 top:0;
@@ -1500,10 +1502,6 @@ document.querySelectorAll(".album-gallery img").forEach(img => {
 
 });
 
-const backToTopBtn = document.getElementById("backToTop");
-
-if (backToTopBtn) {
-
 window.addEventListener("scroll", function () {
   const backToTopBtn = document.getElementById("backToTop");
   if (!backToTopBtn) return;
@@ -1514,12 +1512,7 @@ window.addEventListener("scroll", function () {
     backToTopBtn.classList.remove("show");
   }
 });
-
-}
     
-</script>
-
-<div id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back to top</div>
-  
+</script>  
 </body>
 </html>
