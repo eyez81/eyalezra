@@ -1504,26 +1504,22 @@ const backToTopBtn = document.getElementById("backToTop");
 
 if (backToTopBtn) {
 
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 500) {
-      backToTopBtn.classList.add("show");
-    } else {
-      backToTopBtn.classList.remove("show");
-    }
-  });
+window.addEventListener("scroll", function () {
+  const backToTopBtn = document.getElementById("backToTop");
+  if (!backToTopBtn) return;
 
-  backToTopBtn.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
+  if (window.scrollY > 500) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
+  }
+});
 
 }
     
 </script>
 
-<div id="backToTop">Back to top</div>
+<div id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back to top</div>
   
 </body>
 </html>
