@@ -327,55 +327,49 @@ footer a:hover {
 
 }
 
-#backToTop {
+#backToTop{
   position: fixed;
-  right: 28px;
-  bottom: 24px;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: rgba(34, 34, 34, 0.72);
-  background: transparent;
+  right: 40px;
+  bottom: 40px;
   cursor: pointer;
   opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.35s ease, color 0.35s ease;
-  z-index: 2000;
-  user-select: none;
+  transition: opacity .3s ease;
+  z-index: 999;
 }
 
-#backToTop.show {
+#backToTop.show{
   opacity: 1;
-  pointer-events: auto;
 }
 
-#backToTop:hover {
-  color: rgba(34, 34, 34, 1);
+/* במחשב */
+#backToTop::before{
+  content: "BACK TO TOP";
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #666;
 }
 
-@media (max-width: 768px) {
-  #backToTop {
-    right: 14px;
-    bottom: 14px;
-    font-size: 0;
-    letter-spacing: 0;
-    width: 34px;
-    height: 34px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255,255,255,0.75);
+/* במובייל */
+@media (max-width:768px){
+
+  #backToTop{
+    right: 16px;
+    bottom: 16px;
+    width: 36px;
+    height: 36px;
+    background: rgba(255,255,255,0.8);
     border-radius: 50%;
-    color: rgba(34, 34, 34, 0.85);
-    backdrop-filter: blur(4px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
   }
 
-  #backToTop::before {
+  #backToTop::before{
     content: "↑";
     font-size: 18px;
-    line-height: 1;
+    letter-spacing:0;
   }
+
 }
   
 </style>
@@ -1209,8 +1203,8 @@ These photographs are not only about landscapes or trails. They are about the mo
 © Eyal Ezra 2026 | <a href="mailto:eyal1ezra@gmail.com">eyal1ezra@gmail.com</a>
   </footer>
 
-<div id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })">Back to top</div>
-
+<div id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"></div>
+  
 <div id="lightbox" style="
 position:fixed;
 top:0;
