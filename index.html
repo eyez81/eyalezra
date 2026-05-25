@@ -770,13 +770,10 @@ function formatAlbumDescription(description) {
   }
 
   return raw
-    .split(/
-\s*
-/)
+    .split(/\n\s*\n/)
     .map(block => block.trim())
     .filter(Boolean)
-    .map(block => `<p>${escapeHtml(block).replace(/
-/g, "<br>")}</p>`)
+    .map(block => `<p>${escapeHtml(block).replace(/\n/g, "<br>")}</p>`)
     .join("");
 }
 
