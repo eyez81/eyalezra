@@ -831,9 +831,11 @@ async function getAllPocketBasePhotoUrls() {
   let totalPages = 1;
 
   try {
+    const homeFilter = encodeURIComponent("is_home=true && is_visible=true");
+
     do {
       const data = await fetchJson(
-        `${PB_BASE_URL}/api/collections/portfolio_photos/records?perPage=500&page=${page}&sort=sort_order`
+        `${PB_BASE_URL}/api/collections/portfolio_photos/records?perPage=500&page=${page}&sort=sort_order&filter=${homeFilter}`
       );
 
       urls.push(
