@@ -760,6 +760,26 @@ function classifyGalleryImages(scope = document) {
   scope.querySelectorAll(".album-gallery img").forEach(classifyImage);
 }
 
+function formatAlbumDescription(description) {
+  const raw = String(description || "").trim();
+  if (!raw) return "";
+
+  const looksLikeHtml = /<\/?[a-z][\s\S]*>/i.test(raw);
+  if (looksLikeHtml) {
+    return raw;
+  }
+
+  return raw
+    .split(/
+\s*
+/)
+    .map(block => block.trim())
+    .filter(Boolean)
+    .map(block => `<p>${escapeHtml(block).replace(/
+/g, "<br>")}</p>`)
+    .join("");
+}
+
 function renderDynamicAlbum(section, album, photos) {
   const titleEl = section.querySelector(".album-title");
   const galleryEl = section.querySelector(".album-gallery");
@@ -774,20 +794,25 @@ function renderDynamicAlbum(section, album, photos) {
     galleryEl.querySelectorAll(".album-text:not(.dynamic-loading)")
   ).map(el => el.outerHTML);
 
+  const descriptionHtml = formatAlbumDescription(album.description);
+  const descriptionBlock = descriptionHtml
+    ? `<div class="album-text">${descriptionHtml}</div>`
+    : (existingTextBlocks[0] || "");
+
   const imageHtml = photos.map(photo => {
     const title = photo.title || album.title || "";
     return `<img loading="lazy" src="${photo.image_url}" alt="${escapeHtml(title)}">`;
   });
 
-  if (existingTextBlocks.length && imageHtml.length > 1) {
+  if (descriptionBlock && imageHtml.length > 1) {
     galleryEl.innerHTML = [
       imageHtml[0],
-      ...existingTextBlocks,
+      descriptionBlock,
       ...imageHtml.slice(1)
     ].join("");
   } else {
     galleryEl.innerHTML = [
-      ...existingTextBlocks,
+      descriptionBlock,
       ...imageHtml
     ].join("");
   }
