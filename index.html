@@ -479,15 +479,6 @@ footer a:hover {
 <section id="degania-alef" class="album-section" data-dynamic-only="true" data-pb-slug="degania-alef">
   <div class="album-title">DEGANIA ALEF</div>
   <div class="album-gallery">
-    <div class="album-text">
-  <p>
-    There are places we pass through every day without truly stopping to look. Degania Alef, the kibbutz where I live, is familiar to me in almost every path, tree, and corner. Yet when I went out to photograph it, I discovered that it is full of small details that usually disappear into the routine of daily life.
-  </p>
-
-  <p>
-    This album is not an attempt to document the kibbutz in a formal or historical way. Instead, it is an attempt to pause for a moment and look at the simple things — the marks of time, everyday objects, and quiet corners that most of us pass by without noticing. Through the camera, I tried to find the beauty in the small details, the stories hidden within the most ordinary things, and the unique feeling of a place that may seem calm and simple, yet is full of memories, life, and history.
-  </p>
-</div>
     <div class="album-text dynamic-loading">Loading Degania Alef from PocketBase...</div>
   </div>
 </section>
@@ -495,22 +486,6 @@ footer a:hover {
 <section id="desert" class="album-section" data-dynamic-only="true" data-pb-slug="desert">
   <div class="album-title">IN THE DESERT</div>
   <div class="album-gallery">
-    <div class="album-text">
-  <p>
-    Some classrooms have no walls.
-On journeys with my students through southern Israel — across the Judean Desert and the Eilat Mountains — learning takes place far from desks and notebooks.
-  </p>
-
-  <p>
-    Long days on the trail, rough paths under the sun, and nights spent in tents create a different rhythm. Life becomes simpler: footsteps on gravel, shared effort, quiet conversations along the way. Within the challenge, a sense of togetherness slowly grows. Within the fatigue, new strength appears.
-  </p>
-
-  <p>
-The desert carries a silence that is hard to find anywhere else. It allows space — to breathe, to look around, and sometimes to look inward. For many of the students, these journeys become moments of discovery, when they realize they are capable of more than they once believed.  </p>
-
-  <p>
-These photographs are not only about landscapes or trails. They are about the moments between the steps — light touching the mountains at dawn, a quiet glance between friends, and the bond that forms when people walk together through a wide and silent land.  </p>    
-</div>
     <div class="album-text dynamic-loading">Loading In The Desert from PocketBase...</div>
   </div>
 </section>
@@ -787,14 +762,10 @@ function renderDynamicAlbum(section, album, photos) {
     titleEl.textContent = album.title;
   }
 
-  const existingTextBlocks = Array.from(
-    galleryEl.querySelectorAll(".album-text:not(.dynamic-loading)")
-  ).map(el => el.outerHTML);
-
   const descriptionHtml = formatAlbumDescription(album.description);
   const descriptionBlock = descriptionHtml
     ? `<div class="album-text">${descriptionHtml}</div>`
-    : (existingTextBlocks[0] || "");
+    : "";
 
   const imageHtml = photos.map(photo => {
     const title = photo.title || album.title || "";
