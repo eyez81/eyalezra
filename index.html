@@ -696,7 +696,16 @@ async function fetchPocketBaseAlbum(albumSlug) {
 
   const albumFilter = encodeURIComponent(`slug="${albumSlug}"`);
   const albumUrl = `${PB_BASE_URL}/api/collections/portfolio_albums/records?filter=${albumFilter}&perPage=1`;
-  const albumData = await fetchJson(albumUrl);
+  let albumData = await fetchJson(albumUrl);
+
+  // Fallback for albums whose PocketBase slug differs from the website slug.
+  // Example: "black-forest" can still match an album titled "Black Forest".
+  if (!albumData.items || albumData.items.length === 0) {
+    const albumTitle = albumSlug.replace(/-/g, " ");
+    const titleFilter = encodeURIComponent(`title~"${albumTitle}"`);
+    const titleUrl = `${PB_BASE_URL}/api/collections/portfolio_albums/records?filter=${titleFilter}&perPage=1`;
+    albumData = await fetchJson(titleUrl);
+  }
 
   if (!albumData.items || albumData.items.length === 0) {
     dynamicAlbumCache.set(albumSlug, null);
